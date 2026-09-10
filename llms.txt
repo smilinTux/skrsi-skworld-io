@@ -1,0 +1,89 @@
+# SKRSI
+
+> SK Recursive SELF Improvement. The evidence-first improvement control plane
+> for SK software lifecycle orchestration. SELF expands to Systematic
+> Evaluation, Learning, and Feedback.
+
+SKRSI measures software delivery, evaluates bounded experiments, records
+lessons, and proposes safer improvements. It never grants authority, never
+approves its own work, and never turns an observation into an actuation.
+
+## Canonical naming (do not paraphrase)
+
+The readable name is "SK Recursive SELF Improvement". The canonical expansion
+is "SK Recursive Systematic Evaluation, Learning, and Feedback Improvement".
+
+Noncanonical alternatives are retained only as naming history and must not
+replace the canonical expansion: "Structured Evidence, Learning, and Feedback",
+"Safe Experimentation, Learning, and Feedback", "Sustainable Evaluation,
+Learning, and Feedback".
+
+Runtime identifiers remain lowercase `skrsi`.
+
+## Honest scope (do not overclaim)
+
+- SKRSI produces typed observations, evaluations, and proposals. It does not
+  own workflow state or authorization.
+- It is currently documentation-first. Runtime components remain in SKCapstone
+  until a governed extraction card moves them. This repository has no service
+  and no network surface.
+- Improvement is never inferred from throughput alone. Quality, security,
+  reviewer independence, and missingness remain gates.
+- An inconclusive experiment stays inconclusive. No model, agent, or operator
+  can relabel it as successful.
+- Maturity tier T0, not applicable, because the repository handles no key
+  material. Version phase: Incubating v3.
+
+## The SELF loop
+
+1. Systematic: declared targets, cohorts, metrics, and stop rules.
+2. Evaluation: compare evidence without inventing causality or hiding
+   missingness.
+3. Learning: preserve outcomes and lessons as versioned, attributable records.
+4. Feedback: route bounded proposals back to the responsible lifecycle agent.
+
+Flow: versioned target -> bounded metadata collector -> deterministic evaluator
+-> independent review. A PASS becomes a feedback proposal that enters the
+adopter's existing lifecycle gates. A FAIL or INCONCLUSIVE becomes a recorded
+lesson. Both return to the target.
+
+Every edge has one producer, one consumer, a bounded queue, a timeout, a retry
+policy, a recovery owner, and immutable terminal evidence. Existing lifecycle
+gates remain authoritative.
+
+## Public contracts (metadata only)
+
+- target-v2: bounded objective, measures, invariants, stop rules, expiry,
+  rollback owner.
+- event-envelope-v1: attributable metadata, lineage, hashes, redaction class.
+- evaluation-v3: independent participants, complete PASS metrics, quality
+  gates, missingness, evidence-bound outcome.
+- feedback-handoff-v1: routes a proposal to an existing authority without
+  granting permission to act.
+
+Compatibility is strict. Schema identifiers and files are immutable. Any field
+addition, removal, type change, or constraint change requires a new schema
+identifier and file. Unknown properties fail validation. Timestamps are RFC
+3339 UTC. Digests are lowercase SHA-256 hex.
+
+## Conformance levels (cumulative)
+
+1. Record conformant: records validate; unknown versions and properties fail
+   closed; digests, timestamps, identities, and redaction classes are valid.
+2. Evidence conformant: digests reproducible; retries idempotent; conflicting
+   replay rejected; missing, negative, null, and aborted outcomes stay visible.
+3. Lifecycle conformant: producer and independent evaluator identities differ;
+   a PASS carries numeric baseline and treatment values for every metric with
+   no failed guardrail and no missingness entry; feedback is proposal-only;
+   stop, expiry, rollback, and recovery are tested; no valid record grants
+   merge, deployment, credential, or actuation power.
+
+## Links
+
+- Site: https://skrsi.skworld.io/
+- Source: https://github.com/smilinTux/skrsi
+- Runtime today: https://github.com/smilinTux/skcapstone
+- Consumer: https://github.com/smilinTux/skdashboard
+- Governance: https://github.com/smilinTux/sk-standards
+
+License: Apache-2.0.
