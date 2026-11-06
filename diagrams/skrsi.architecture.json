@@ -1,0 +1,267 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "SKRSI Evidence-First Improvement Loop",
+    "subtitle": "Versioned target to bounded collector to deterministic evaluator to independent review, then a proposal or a lesson, never an actuation",
+    "output": "skrsi.architecture.html",
+    "quality_profile": "showcase"
+  },
+  "components": [
+    {
+      "id": "target",
+      "type": "backend",
+      "label": "Target Registry",
+      "sublabel": "metrics, stop rules, expiry",
+      "pos": [
+        40,
+        300
+      ],
+      "size": [
+        170,
+        72
+      ]
+    },
+    {
+      "id": "collector",
+      "type": "backend",
+      "label": "Metadata Collector",
+      "sublabel": "bounded ingestion, dedup, lineage, missingness",
+      "pos": [
+        250,
+        300
+      ],
+      "size": [
+        180,
+        72
+      ]
+    },
+    {
+      "id": "evaluator",
+      "type": "backend",
+      "label": "Deterministic Evaluator",
+      "sublabel": "cohort comparison, quality gates",
+      "pos": [
+        470,
+        300
+      ],
+      "size": [
+        180,
+        72
+      ]
+    },
+    {
+      "id": "reviewer",
+      "type": "security",
+      "label": "Independent Review",
+      "sublabel": "exact-evidence PASS, FAIL, or BLOCKED verdict",
+      "pos": [
+        690,
+        300
+      ],
+      "size": [
+        180,
+        72
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "backend",
+      "label": "Feedback Proposal",
+      "sublabel": "proposal only, grants no authority",
+      "pos": [
+        930,
+        160
+      ],
+      "size": [
+        170,
+        72
+      ]
+    },
+    {
+      "id": "lesson",
+      "type": "database",
+      "label": "Recorded Lesson",
+      "sublabel": "versioned, attributable, never relabeled",
+      "pos": [
+        930,
+        440
+      ],
+      "size": [
+        170,
+        72
+      ]
+    },
+    {
+      "id": "gates",
+      "type": "external",
+      "label": "Existing Lifecycle Gates",
+      "sublabel": "adopter's own authorization, outside SKRSI",
+      "pos": [
+        1140,
+        160
+      ],
+      "size": [
+        180,
+        72
+      ]
+    },
+    {
+      "id": "skcapstone",
+      "type": "external",
+      "label": "SKCapstone",
+      "sublabel": "current runtime home (skrsi_* modules)",
+      "pos": [
+        250,
+        480
+      ],
+      "size": [
+        200,
+        84
+      ]
+    },
+    {
+      "id": "skdashboard",
+      "type": "external",
+      "label": "SKDashboard",
+      "sublabel": "authorized aggregate visibility only",
+      "pos": [
+        690,
+        480
+      ],
+      "size": [
+        180,
+        72
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "SKRSI contracts: documentation-first, no network surface",
+      "wraps": [
+        "target",
+        "collector",
+        "evaluator",
+        "reviewer",
+        "feedback",
+        "lesson"
+      ]
+    },
+    {
+      "kind": "security-group",
+      "label": "Producer and reviewer identities must differ",
+      "wraps": [
+        "reviewer"
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "target-to-collector",
+      "from": "target",
+      "to": "collector",
+      "label": "bounded ingestion",
+      "variant": "default"
+    },
+    {
+      "id": "collector-to-evaluator",
+      "from": "collector",
+      "to": "evaluator",
+      "label": "deduplicated metadata",
+      "variant": "default"
+    },
+    {
+      "id": "evaluator-to-reviewer",
+      "from": "evaluator",
+      "to": "reviewer",
+      "label": "quality-gated comparison",
+      "variant": "default"
+    },
+    {
+      "id": "reviewer-to-feedback",
+      "from": "reviewer",
+      "to": "feedback",
+      "label": "PASS",
+      "variant": "emphasis"
+    },
+    {
+      "id": "reviewer-to-lesson",
+      "from": "reviewer",
+      "to": "lesson",
+      "label": "FAIL or INCONCLUSIVE",
+      "variant": "dashed"
+    },
+    {
+      "id": "feedback-to-gates",
+      "from": "feedback",
+      "to": "gates",
+      "label": "proposal, no authority granted",
+      "variant": "security"
+    },
+    {
+      "id": "gates-to-target",
+      "from": "gates",
+      "to": "target",
+      "label": "loop back",
+      "variant": "dashed"
+    },
+    {
+      "id": "lesson-to-target",
+      "from": "lesson",
+      "to": "target",
+      "label": "loop back",
+      "variant": "dashed"
+    },
+    {
+      "id": "skcapstone-to-collector",
+      "from": "skcapstone",
+      "to": "collector",
+      "label": "implements today",
+      "variant": "dashed"
+    },
+    {
+      "id": "skcapstone-to-evaluator",
+      "from": "skcapstone",
+      "to": "evaluator",
+      "label": "implements today",
+      "variant": "dashed"
+    },
+    {
+      "id": "evaluator-to-skdashboard",
+      "from": "evaluator",
+      "to": "skdashboard",
+      "label": "bounded aggregate visibility",
+      "variant": "dashed",
+      "fromSide": "bottom",
+      "toSide": "left"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "amber",
+      "title": "Proposes, never authorizes",
+      "items": [
+        "A valid record confers no merge, deployment, credential, or actuation power",
+        "Feedback is proposal-only, routed through the adopter's own existing lifecycle gates"
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "Independent review is enforced",
+      "items": [
+        "Producer and reviewer identities must differ, an ordered unique participant tuple",
+        "FAIL or INCONCLUSIVE stays recorded as a lesson, and no model, agent, or operator can relabel it as success"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Documentation-first today",
+      "items": [
+        "This repository publishes contracts and examples only, with no service and no network surface",
+        "Runtime modules (skrsi_registry, skrsi_collector, skrsi_evaluator, skrsi_experiment_controller) live in SKCapstone until a governed extraction card moves them",
+        "SKDashboard consumes SKRSI records for bounded aggregate visibility, not for source content or authorization"
+      ]
+    }
+  ]
+}
