@@ -54,6 +54,7 @@
     <div class="brand"><span class="glyph">&#128257;</span> SKRSI</div>
     <nav class="topnav">
       <a href="#loop">The loop</a>
+      <a href="#architecture">Architecture</a>
       <a href="#contracts">Contracts</a>
       <a href="#conformance">Conformance</a>
       <a href="https://github.com/smilinTux/skrsi">GitHub &#8599;</a>
@@ -159,6 +160,15 @@
       </div>
       <p class="loopback">Both branches return to the target. That return path is the only recursion in the system.</p>
     </div>
+  </section>
+
+  <section id="architecture">
+    <h2>Architecture, interactive</h2>
+    <p class="lead">The flow above is also published as a self-contained, explorable diagram: pan, zoom, and follow each edge. It is generated with <a href="https://github.com/tt-a1i/archify">Archify</a> from the same component map as the mermaid diagram in the SKRSI repo's own <code>docs/ARCHITECTURE.md</code>, and its JSON source is committed next to the generated page.</p>
+    <figure class="diagram">
+      <div class="preview">Target Registry &rarr; Metadata Collector &rarr; Deterministic Evaluator &rarr; Independent Review &rarr; Feedback Proposal or Recorded Lesson</div>
+      <figcaption><span class="verdict pass">Interactive</span> Component map with the SKCapstone runtime and SKDashboard consumer drawn in. <a href="diagrams/skrsi.architecture.html" target="_blank" rel="noopener">Open the interactive version ↗</a></figcaption>
+    </figure>
   </section>
 
   <section id="contracts">
