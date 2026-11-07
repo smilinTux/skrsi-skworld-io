@@ -47,8 +47,8 @@ CNAME           custom domain for GitHub Pages
 robots.txt      crawler policy, AI crawlers explicitly welcomed
 sitemap.xml     sitemap: home, docs, diagrams
 llms.txt        machine-readable summary for language models
-og-image.svg    social card source
-og-image.png    social card, 1200x630, referenced by og:image
+og.html         social card source (render: headless chrome 1200x630)
+og.png          social card, 1200x630, referenced by og:image
 ```
 
 ## Hosting
