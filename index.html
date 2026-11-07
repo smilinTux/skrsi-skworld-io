@@ -7,8 +7,6 @@
 <meta name="description" content="SKRSI is the evidence-first improvement control plane for SK software lifecycle orchestration. SELF means Systematic Evaluation, Learning, and Feedback. It measures delivery, evaluates bounded experiments, records lessons, and proposes safer improvements. It never grants authority, never approves its own work, and never turns an observation into an actuation.">
 <meta name="keywords" content="SKRSI, recursive self improvement, systematic evaluation learning feedback, evidence-first, software lifecycle orchestration, bounded experiments, JSON Schema contracts, conformance, SKWorld, sovereign">
 <link rel="canonical" href="https://skrsi.skworld.io/">
-
-<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://skrsi.skworld.io/">
 <meta property="og:title" content="SKRSI: SK Recursive SELF Improvement">
@@ -16,22 +14,23 @@
 <meta property="og:image" content="https://skrsi.skworld.io/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:site_name" content="SKRSI · SKWorld">
-
-<!-- Twitter Card -->
+<meta property="og:site_name" content="SKWorld">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@smilinTux">
 <meta name="twitter:title" content="SKRSI: SK Recursive SELF Improvement">
 <meta name="twitter:description" content="Evidence-first improvement control plane. It measures, evaluates, records lessons, and proposes. It never grants authority and never approves its own work.">
 <meta name="twitter:image" content="https://skrsi.skworld.io/og-image.png">
 <meta name="twitter:image:alt" content="SKRSI, the evidence-first improvement control plane">
-
+<meta name="color-scheme" content="light dark">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%F0%9F%94%81</text></svg>">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="style.css">
-
+<script>
+(function(){try{var t=localStorage.getItem('skrsi-theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -48,94 +47,92 @@
 </script>
 </head>
 <body>
-<div class="wrap">
 
-  <div class="topbar">
-    <div class="brand"><span class="glyph">&#128257;</span> SKRSI</div>
-    <nav class="topnav">
-      <a href="#loop">The loop</a>
-      <a href="#architecture">Architecture</a>
-      <a href="#contracts">Contracts</a>
-      <a href="#conformance">Conformance</a>
-      <a href="https://github.com/smilinTux/skrsi">GitHub &#8599;</a>
-    </nav>
-  </div>
-
-  <header class="hero">
-    <span class="eyebrow">SKWorld &middot; Incubating v3 &middot; Apache-2.0</span>
-    <h1>The improvement loop that <em>cannot</em> promote itself</h1>
-    <p class="sub"><strong>SKRSI</strong> is the evidence-first improvement control plane for SK software lifecycle orchestration. It measures delivery, evaluates bounded experiments, records lessons, and proposes safer changes. Then it stops and hands the decision to somebody else.</p>
-    <div class="expansion">
-      <span class="exp-label">Canonical expansion</span>
-      <p class="exp-text">SK Recursive <strong>S</strong>ystematic <strong>E</strong>valuation, <strong>L</strong>earning, and <strong>F</strong>eedback Improvement</p>
+<header class="hero">
+  <div class="inner">
+    <div class="topbar">
+      <span class="brand"><a href="https://skworld.io/">&#128039; SKWORLD</a> <span class="sub-brand">/ rsi</span></span>
+      <nav class="topnav" aria-label="Main navigation">
+        <a href="#loop">The loop</a>
+        <a href="#flow">Flow</a>
+        <a href="#contracts">Contracts</a>
+        <a href="#conformance">Conformance</a>
+        <a href="#in-practice">In practice</a>
+        <a href="diagrams/skrsi.architecture.html" target="_blank" rel="noopener">Architecture diagram &#8599;</a>
+        <a href="docs.html">Docs</a>
+        <a href="https://github.com/smilinTux/skrsi">GitHub &#8599;</a>
+        <button type="button" class="theme-btn" id="theme-btn" aria-label="Switch between light and dark theme">theme</button>
+      </nav>
     </div>
-  </header>
-
-  <div class="banner">
-    <span class="ico">&#9888;&#65039;</span>
-    <p><strong>Documentation-first, and honest about it.</strong> This repository publishes portable JSON Schema contracts and examples. The runtime components still live in <a href="https://github.com/smilinTux/skcapstone">SKCapstone</a> until a governed extraction card moves them. Nothing here is a service, and nothing here has a network surface.</p>
+    <span class="eyebrow">SKWorld &middot; Agents and the OS &middot; Incubating &middot; Apache-2.0</span>
+    <h1>The improvement loop that cannot promote itself.</h1>
+    <p class="sub"><strong>SKRSI</strong> is the evidence-first improvement control plane for SK software lifecycle orchestration. It measures delivery, evaluates bounded experiments, records lessons, and proposes safer changes. Then it stops and hands the decision to somebody else.</p>
+    <div class="cta">
+      <a class="btn primary" href="#loop">See the loop</a>
+      <a class="btn ghost" href="docs.html">Read the docs</a>
+    </div>
   </div>
+</header>
 
-  <section id="never">
-    <h2>Three things it will never do</h2>
-    <p class="lead">Most "self-improving" systems fail in the same place: the thing that measures the work is also the thing allowed to approve it. SKRSI is built so that collapse is structurally impossible.</p>
-    <div class="nevers">
-      <div class="ncard">
-        <span class="nlabel">Never</span>
-        <h3>Grant authority</h3>
-        <p>A valid SKRSI record confers no merge, deployment, credential, or actuation power. Feedback is proposal-only, and it routes through the adopter's existing authorization gates.</p>
-      </div>
-      <div class="ncard">
-        <span class="nlabel">Never</span>
-        <h3>Approve its own work</h3>
-        <p>Producer and independent evaluator identities must differ, enforced through an ordered, unique evaluation participant tuple. The measurer does not get to certify the measurement.</p>
-      </div>
-      <div class="ncard">
-        <span class="nlabel">Never</span>
-        <h3>Launder an observation</h3>
-        <p>An observation does not become an actuation by passing through the system. An inconclusive experiment stays inconclusive, and no model, agent, or operator can relabel it as a success.</p>
-      </div>
+<div class="inner">
+
+  <section id="pillars" class="pillars" aria-label="Three things SKRSI will never do">
+    <div class="pill">
+      <span class="nlabel">Never</span>
+      <h3 style="margin-top:.7rem">Grant authority</h3>
+      <p>A valid SKRSI record confers no merge, deployment, credential, or actuation power. Feedback is proposal-only, and it routes through the adopter's existing authorization gates.</p>
+    </div>
+    <div class="pill">
+      <span class="nlabel">Never</span>
+      <h3 style="margin-top:.7rem">Approve its own work</h3>
+      <p>Producer and independent evaluator identities must differ, enforced through an ordered, unique evaluation participant tuple. The measurer does not get to certify the measurement.</p>
+    </div>
+    <div class="pill">
+      <span class="nlabel">Never</span>
+      <h3 style="margin-top:.7rem">Launder an observation</h3>
+      <p>An observation does not become an actuation by passing through the system. An inconclusive experiment stays inconclusive, and no model, agent, or operator can relabel it as a success.</p>
     </div>
   </section>
 
-  <section id="loop">
-    <h2>SELF, the operating loop</h2>
-    <p class="lead">Four ordered stages. Each one constrains the next, and the order carries the guarantee.</p>
+  <section class="sec" id="name">
+    <div class="spot-eyebrow">Canonical expansion</div>
+    <p class="expansion">SK Recursive <strong>S</strong>ystematic <strong>E</strong>valuation, <strong>L</strong>earning, and <strong>F</strong>eedback Improvement</p>
+    <p class="lede">The readable name is SK Recursive SELF Improvement. Runtime identifiers stay lowercase <code>skrsi</code>.</p>
+    <div class="rule"><strong>Documentation-first, and honest about it.</strong> The repository publishes portable JSON Schema contracts, examples, and an advisory evaluate workflow. The runtime components still live in <a href="https://github.com/smilinTux/skcapstone">SKCapstone</a> until a governed extraction card moves them. Nothing here is a service, and nothing here has a network surface.</div>
+  </section>
+
+  <section class="sec" id="loop">
+    <div class="spot-eyebrow">The operating loop</div>
+    <h2>SELF, in four ordered stages</h2>
+    <p>Each stage constrains the next, and the order carries the guarantee.</p>
     <ol class="self">
       <li>
-        <span class="step">S</span>
-        <div>
-          <h3>Systematic</h3>
-          <p>Work from declared targets, cohorts, metrics, and stop rules. A target registers its own invariants, expiry, and rollback owner before anything is measured.</p>
-        </div>
+        <span class="lnum">S</span>
+        <h3>Systematic</h3>
+        <p>Work from declared targets, cohorts, metrics, and stop rules. A target registers its own invariants, expiry, and rollback owner before anything is measured.</p>
       </li>
       <li>
-        <span class="step">E</span>
-        <div>
-          <h3>Evaluation</h3>
-          <p>Compare evidence without inventing causality or hiding missingness. A PASS needs numeric baseline and treatment values for every metric, no failed guardrail, and no explicit missingness entry.</p>
-        </div>
+        <span class="lnum">E</span>
+        <h3>Evaluation</h3>
+        <p>Compare evidence without inventing causality or hiding missingness. A PASS needs numeric baseline and treatment values for every metric, no failed guardrail, and no explicit missingness entry.</p>
       </li>
       <li>
-        <span class="step">L</span>
-        <div>
-          <h3>Learning</h3>
-          <p>Preserve outcomes and lessons as versioned, attributable records. Failed and inconclusive runs are kept with the same care as successful ones, because those are the ones that carry information.</p>
-        </div>
+        <span class="lnum">L</span>
+        <h3>Learning</h3>
+        <p>Preserve outcomes and lessons as versioned, attributable records. Failed and inconclusive runs are kept with the same care as successful ones, because those are the ones that carry information.</p>
       </li>
       <li>
-        <span class="step">F</span>
-        <div>
-          <h3>Feedback</h3>
-          <p>Route bounded proposals back to the responsible lifecycle agent. The existing gates stay authoritative. SKRSI never becomes the thing that says yes.</p>
-        </div>
+        <span class="lnum">F</span>
+        <h3>Feedback</h3>
+        <p>Route bounded proposals back to the responsible lifecycle agent. The existing gates stay authoritative. SKRSI never becomes the thing that says yes.</p>
       </li>
     </ol>
   </section>
 
-  <section id="flow">
+  <section class="sec" id="flow">
+    <div class="spot-eyebrow">Architecture</div>
     <h2>Where the evidence goes</h2>
-    <p class="lead">Every edge has one producer, one consumer, a bounded queue, a timeout, a retry policy, a recovery owner, and immutable terminal evidence.</p>
+    <p>Every edge has one producer, one consumer, a bounded queue, a timeout, a retry policy, a recovery owner, and immutable terminal evidence.</p>
     <div class="flow" role="img" aria-label="Flow: a versioned target feeds a bounded metadata collector, then a deterministic evaluator, then independent review. A PASS becomes a feedback proposal that enters existing lifecycle gates. A FAIL or INCONCLUSIVE becomes a recorded lesson. Both return to the target.">
       <div class="frow">
         <span class="node">Versioned target</span>
@@ -160,90 +157,75 @@
       </div>
       <p class="loopback">Both branches return to the target. That return path is the only recursion in the system.</p>
     </div>
-  </section>
 
-  <section id="architecture">
-    <h2>Architecture, interactive</h2>
-    <p class="lead">The flow above is also published as a self-contained, explorable diagram: pan, zoom, and follow each edge. It is generated with <a href="https://github.com/tt-a1i/archify">Archify</a> from the same component map as the mermaid diagram in the SKRSI repo's own <code>docs/ARCHITECTURE.md</code>, and its JSON source is committed next to the generated page.</p>
-    <figure class="diagram">
-      <div class="preview">Target Registry &rarr; Metadata Collector &rarr; Deterministic Evaluator &rarr; Independent Review &rarr; Feedback Proposal or Recorded Lesson</div>
-      <figcaption><span class="verdict pass">Interactive</span> Component map with the SKCapstone runtime and SKDashboard consumer drawn in. <a href="diagrams/skrsi.architecture.html" target="_blank" rel="noopener">Open the interactive version ↗</a></figcaption>
+    <h3 class="sub3" id="architecture">Architecture, interactive</h3>
+    <figure class="figure">
+      <figcaption style="margin-top:0">The same loop as an explorable component map, with the SKCapstone runtime and the SKDashboard consumer drawn in: pan, zoom, and follow each edge, with a dark/light toggle. It is generated with <a href="https://github.com/tt-a1i/archify">Archify</a> from <a href="diagrams/skrsi.architecture.json">a committed JSON source</a> that follows the flow in the SKRSI <a href="https://github.com/smilinTux/skrsi/blob/main/SOP.md#2-architecture">SOP</a> and the responsibility table in <a href="https://github.com/smilinTux/skrsi/blob/main/docs/ARCHITECTURE.md">docs/ARCHITECTURE.md</a>.</figcaption>
+      <div class="cta" style="margin-top:1rem">
+        <a class="btn primary" href="diagrams/skrsi.architecture.html" target="_blank" rel="noopener">Open the interactive diagram &#8599;</a>
+      </div>
     </figure>
   </section>
 
-  <section id="contracts">
-    <h2>Public contracts</h2>
-    <p class="lead">Metadata-only records, each declaring an exact schema URI. A consumer must reject unknown major versions, and must not infer authorization from a valid record.</p>
+  <section class="sec" id="contracts">
+    <div class="spot-eyebrow">Public contracts</div>
+    <h2>Metadata-only records, exact schema URIs</h2>
+    <p>A consumer must reject unknown major versions, and must not infer authorization from a valid record.</p>
     <div class="tablewrap">
       <table class="ctable">
         <thead>
           <tr><th>Contract</th><th>Schema</th><th>Purpose</th></tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Target</td>
-            <td><code>target-v2</code></td>
-            <td>Registers a bounded objective with measures, invariants, stop rules, expiry, and a rollback owner.</td>
-          </tr>
-          <tr>
-            <td>Event envelope</td>
-            <td><code>event-envelope-v1</code></td>
-            <td>Carries attributable metadata, lineage, hashes, and redaction class.</td>
-          </tr>
-          <tr>
-            <td>Evaluation</td>
-            <td><code>evaluation-v3</code></td>
-            <td>Records independent participants, complete PASS metrics, quality gates, missingness, and an evidence-bound outcome.</td>
-          </tr>
-          <tr>
-            <td>Feedback handoff</td>
-            <td><code>feedback-handoff-v1</code></td>
-            <td>Routes a proposal to an existing authority without granting permission to act.</td>
-          </tr>
+          <tr><td>Target</td><td><code>target-v2</code></td><td>Registers a bounded objective with measures, invariants, stop rules, expiry, and a rollback owner.</td></tr>
+          <tr><td>Event envelope</td><td><code>event-envelope-v1</code></td><td>Carries attributable metadata, lineage, hashes, and redaction class.</td></tr>
+          <tr><td>Evaluation v4</td><td><code>evaluation-v4</code></td><td>Evaluation v3 plus an <code>evidence_class</code> and an <code>instrument</code> self-description. A <code>pass</code> is impossible for synthetic evidence or when the instrument does not run production code. Used by new producers.</td></tr>
+          <tr><td>Evaluation v3</td><td><code>evaluation-v3</code></td><td>Independent participants, complete PASS metrics, quality gates, missingness, and an evidence-bound outcome. Immutable, superseded by v4.</td></tr>
+          <tr><td>Feedback handoff</td><td><code>feedback-handoff-v1</code></td><td>Routes a proposal to an existing authority without granting permission to act.</td></tr>
         </tbody>
       </table>
     </div>
-    <div class="rules">
-      <h3>Compatibility is deliberately strict</h3>
-      <ul>
-        <li>Every published schema identifier and file is immutable.</li>
-        <li>Any field addition, removal, type change, or constraint change requires a new schema identifier and file, even when the change looks additive.</li>
-        <li>Consumers process only explicitly supported exact schema identifiers. There is no same-identifier forward compatibility.</li>
-        <li>Unknown properties fail validation. Extensions belong in a new versioned contract.</li>
-        <li>Timestamps are RFC 3339 UTC. Digests are lowercase SHA-256 hex.</li>
-        <li>Identifiers are opaque, and must not carry credentials, protected content, personal filesystem paths, or private host names.</li>
-      </ul>
-    </div>
+    <h3 class="sub3">Compatibility is deliberately strict</h3>
+    <ul class="plist">
+      <li>Every published schema identifier and file is immutable.</li>
+      <li>Any field addition, removal, type change, constraint change, or invariant change requires a new schema identifier and file, even when the change looks additive.</li>
+      <li>Consumers process only explicitly supported exact schema identifiers. There is no same-identifier forward compatibility.</li>
+      <li>Unknown properties fail validation. Extensions belong in a new versioned contract.</li>
+      <li>Timestamps are RFC 3339 UTC. Digests are lowercase SHA-256 hex.</li>
+      <li>Identifiers are opaque, and must not carry credentials, protected content, personal filesystem paths, or private host names.</li>
+    </ul>
   </section>
 
-  <section id="conformance">
-    <h2>Conformance levels</h2>
-    <p class="lead">Three cumulative levels. Each one contains the one before it, so a claim at the top implies everything below.</p>
-    <div class="levels">
-      <div class="lcard">
-        <span class="lnum">01</span>
-        <h3>Record conformant</h3>
-        <ul>
+  <section class="sec" id="conformance">
+    <div class="spot-eyebrow">Conformance</div>
+    <h2>Three cumulative levels</h2>
+    <p>Each one contains the one before it, so a claim at the top implies everything below.</p>
+    <div class="pgrid">
+      <div class="pcard">
+        <span class="lnum" style="align-self:flex-start">01</span>
+        <span class="pname">Record conformant</span>
+        <ul class="plist">
           <li>Every emitted record validates against its declared schema.</li>
           <li>Unknown schema versions and unknown properties fail closed.</li>
           <li>Digests, timestamps, required identities, and redaction classes are valid.</li>
         </ul>
       </div>
-      <div class="lcard">
-        <span class="lnum">02</span>
-        <h3>Evidence conformant</h3>
-        <ul>
+      <div class="pcard">
+        <span class="lnum" style="align-self:flex-start">02</span>
+        <span class="pname">Evidence conformant</span>
+        <ul class="plist">
           <li>Exact source and evidence digests are reproducible.</li>
           <li>Retries are idempotent, and conflicting replay is rejected.</li>
           <li>Missing, negative, null, and aborted outcomes stay visible.</li>
         </ul>
       </div>
-      <div class="lcard">
-        <span class="lnum">03</span>
-        <h3>Lifecycle conformant</h3>
-        <ul>
+      <div class="pcard k">
+        <span class="lnum" style="align-self:flex-start">03</span>
+        <span class="pname">Lifecycle conformant</span>
+        <ul class="plist">
           <li>Producer and independent evaluator identities differ.</li>
           <li>A PASS carries numeric baseline and treatment values for every metric, with no failed guardrail and no missingness entry.</li>
+          <li>Evaluation v4 records never pass with synthetic evidence or an instrument that does not run production code.</li>
           <li>Feedback is proposal-only and passes through the adopter's existing authority.</li>
           <li>Stop, expiry, rollback, and recovery behavior is tested.</li>
           <li>No valid record grants merge, deployment, credential, or actuation power.</li>
@@ -252,62 +234,99 @@
     </div>
   </section>
 
-  <section id="start">
-    <h2>Start here</h2>
-    <div class="docs">
-      <a class="dcard" href="https://github.com/smilinTux/skrsi/blob/main/README.md">
-        <span class="dname">README</span>
-        <span class="ddesc">Canonical identity, scope, and honest claims.</span>
-      </a>
-      <a class="dcard" href="https://github.com/smilinTux/skrsi/blob/main/docs/ARCHITECTURE.md">
-        <span class="dname">ARCHITECTURE</span>
-        <span class="ddesc">Responsibility and evidence boundaries.</span>
-      </a>
-      <a class="dcard" href="https://github.com/smilinTux/skrsi/blob/main/docs/CONTRACTS.md">
-        <span class="dname">CONTRACTS</span>
-        <span class="ddesc">The versioned public contract catalog.</span>
-      </a>
-      <a class="dcard" href="https://github.com/smilinTux/skrsi/blob/main/docs/ADOPTER-GUIDE.md">
-        <span class="dname">ADOPTER GUIDE</span>
-        <span class="ddesc">The minimal integration path.</span>
-      </a>
-      <a class="dcard" href="https://github.com/smilinTux/skrsi/blob/main/docs/CONFORMANCE.md">
-        <span class="dname">CONFORMANCE</span>
-        <span class="ddesc">Levels, and the checks CI actually runs.</span>
-      </a>
-      <a class="dcard" href="https://github.com/smilinTux/skrsi/blob/main/SOP.md">
-        <span class="dname">SOP</span>
-        <span class="ddesc">Architecture, operating model, verification, rollback.</span>
-      </a>
-    </div>
-    <div class="quick">
-      <span class="qlabel">Validate a checkout</span>
-      <pre><code>git clone https://github.com/smilinTux/skrsi
-cd skrsi
-python3 -m unittest discover -s tests -v
-python3 scripts/validate_public.py .</code></pre>
+  <section class="sec" id="in-practice">
+    <div class="spot-eyebrow">In practice</div>
+    <h2>Advisory evidence on every pull request</h2>
+    <p>Adoption is one caller workflow plus a target file. The reusable <code>evaluate.yml</code> runs the repo's bench on the PR head and again at the base, builds an evaluation v4 record, and upserts one PR comment per target. It never fails the PR, including when SKRSI itself breaks, and it must not be added to required checks.</p>
+    <div class="two">
+      <div>
+        <h3>Outcome rules</h3>
+        <p><code>regression</code> beats <code>fail</code>, which beats <code>inconclusive</code>, which beats <code>pass</code>. Any missingness, synthetic evidence, an instrument that does not run production code, or no improved metric caps the outcome at <code>inconclusive</code>.</p>
+        <p><a href="https://github.com/smilinTux/skrsi/blob/main/docs/ADOPTER-GUIDE.md#make-skrsi-part-of-every-build">Adopter guide: make SKRSI part of every build &#8599;</a></p>
+      </div>
+      <div>
+        <h3>The first code adopter</h3>
+        <p>The <code>skmemory-retrieval</code> target ran the workflow on real pull requests in November 2026. Evaluation v4 capped every synthetic run at <code>inconclusive</code>, and the case study records what the evidence could and could not say, including what it missed.</p>
+        <p><a href="https://github.com/smilinTux/skrsi/blob/main/docs/CASE-STUDY-SKMEMORY-RETRIEVAL.md">Read the case study &#8599;</a></p>
+      </div>
+      <div>
+        <h3>Lanes</h3>
+        <p>One card, one worktree, one branch, one PR, one independent review, one landing. SKRSI records evidence and proposes; it never approves or merges, and existing CI stays the only blocker.</p>
+        <p><a href="https://github.com/smilinTux/skrsi/blob/main/docs/PLAYBOOK-LANES.md">Lane playbook &#8599;</a></p>
+      </div>
     </div>
   </section>
 
-  <section id="related">
+  <section class="sec" id="docs">
+    <div class="spot-eyebrow">Start here</div>
+    <h2>Documentation</h2>
+    <p>Every doc below is in the <a href="https://github.com/smilinTux/skrsi">SKRSI repository</a>. The <a href="docs.html">docs viewer</a> renders the <code>docs/</code> folder live from GitHub, mermaid included.</p>
+    <div class="pgrid">
+      <a class="pcard" href="https://github.com/smilinTux/skrsi/blob/main/README.md"><span class="pname">README</span><span class="pblurb">Canonical identity, scope, and honest claims.</span><span class="phost">README.md</span></a>
+      <a class="pcard" href="https://github.com/smilinTux/skrsi/blob/main/SOP.md"><span class="pname">SOP</span><span class="pblurb">Architecture, operating model, verification, rollback.</span><span class="phost">SOP.md</span></a>
+      <a class="pcard" href="https://github.com/smilinTux/skrsi/blob/main/docs/ARCHITECTURE.md"><span class="pname">Architecture</span><span class="pblurb">Responsibility and evidence boundaries, invariants.</span><span class="phost">docs/ARCHITECTURE.md</span></a>
+      <a class="pcard" href="https://github.com/smilinTux/skrsi/blob/main/docs/CONTRACTS.md"><span class="pname">Contracts</span><span class="pblurb">The versioned public contract catalog.</span><span class="phost">docs/CONTRACTS.md</span></a>
+      <a class="pcard" href="https://github.com/smilinTux/skrsi/blob/main/docs/ADOPTER-GUIDE.md"><span class="pname">Adopter guide</span><span class="pblurb">The minimal integration path and the evaluate workflow.</span><span class="phost">docs/ADOPTER-GUIDE.md</span></a>
+      <a class="pcard" href="https://github.com/smilinTux/skrsi/blob/main/docs/CONFORMANCE.md"><span class="pname">Conformance</span><span class="pblurb">Levels, and the checks CI actually runs.</span><span class="phost">docs/CONFORMANCE.md</span></a>
+      <a class="pcard" href="https://github.com/smilinTux/skrsi/blob/main/docs/CASE-STUDY-SKMEMORY-RETRIEVAL.md"><span class="pname">Case study: skmemory retrieval</span><span class="pblurb">The first code adopter, what it got right and what it missed.</span><span class="phost">docs/CASE-STUDY-SKMEMORY-RETRIEVAL.md</span></a>
+      <a class="pcard" href="https://github.com/smilinTux/skrsi/blob/main/docs/PLAYBOOK-LANES.md"><span class="pname">Lane playbook</span><span class="pblurb">Lane briefs, the landing script, and the lessons behind them.</span><span class="phost">docs/PLAYBOOK-LANES.md</span></a>
+      <a class="pcard" href="diagrams/skrsi.architecture.html" target="_blank" rel="noopener"><span class="pname">Architecture diagram</span><span class="pblurb">Interactive Archify component map.</span><span class="phost">diagrams/skrsi.architecture.html</span></a>
+    </div>
+    <h3 class="sub3">Validate a checkout</h3>
+    <pre><code>git clone https://github.com/smilinTux/skrsi
+cd skrsi
+python3 -m pip install -r requirements-dev.txt
+python3 -m unittest discover -s tests -v
+python3 scripts/validate_public.py .</code></pre>
+  </section>
+
+  <section class="sec" id="related">
+    <div class="spot-eyebrow">SKWorld</div>
     <h2>Related projects</h2>
-    <ul class="rel">
-      <li><a href="https://github.com/smilinTux/skcapstone">SKCapstone</a> holds the current registry, collector, evaluator, experiment controller, and runtime handoff implementation.</li>
-      <li><a href="https://github.com/smilinTux/skdashboard">SKDashboard</a> consumes SKRSI records for bounded aggregate visibility.</li>
-      <li><a href="https://github.com/smilinTux/sk-standards">sk-standards</a> governs this repository.</li>
-    </ul>
+    <div class="pgrid">
+      <a class="pcard" href="https://skworld.io/"><span class="pname">SKWorld</span><span class="pblurb">The whole stack, silicon to soul. SKRSI is how it measures itself.</span><span class="phost">skworld.io</span></a>
+      <a class="pcard" href="https://skpatch.skworld.io/"><span class="pname">SKPatch</span><span class="pblurb">Patch at AI speed. Every image pinned, every CVE tracked.</span><span class="phost">skpatch.skworld.io</span></a>
+      <a class="pcard" href="https://sksec.skworld.io/"><span class="pname">SKSec</span><span class="pblurb">CrowdSec at the edge, fail-closed.</span><span class="phost">sksec.skworld.io</span></a>
+      <a class="pcard" href="https://skmemory.skworld.io/"><span class="pname">SKMemory</span><span class="pblurb">Per-agent memory, and the first code adopter of the evaluate workflow.</span><span class="phost">skmemory.skworld.io</span></a>
+      <a class="pcard" href="https://skstacks.skworld.io/"><span class="pname">SKStacks</span><span class="pblurb">AI-first sovereign infrastructure framework.</span><span class="phost">skstacks.skworld.io</span></a>
+      <a class="pcard" href="https://skcapstone.skworld.io/"><span class="pname">SKCapstone</span><span class="pblurb">Holds the current registry, collector, evaluator, experiment controller, and runtime handoff implementation.</span><span class="phost">skcapstone.skworld.io</span></a>
+      <a class="pcard" href="https://github.com/smilinTux/skdashboard"><span class="pname">SKDashboard</span><span class="pblurb">Consumes SKRSI records for bounded aggregate visibility.</span><span class="phost">github.com/smilinTux/skdashboard</span></a>
+      <a class="pcard" href="https://github.com/smilinTux/sk-standards"><span class="pname">sk-standards</span><span class="pblurb">Governs this repository.</span><span class="phost">github.com/smilinTux/sk-standards</span></a>
+    </div>
+  </section>
+
+  <section class="closing">
+    <h2>Measure it. Then hand it over.</h2>
+    <p>SKRSI produces typed observations, evaluations, and proposals. It does not own workflow state or authorization. Improvement is never inferred from throughput alone: quality, security, reviewer independence, and missingness remain gates.</p>
+    <div class="cta">
+      <a class="btn primary" href="https://github.com/smilinTux/skrsi">Read the source</a>
+      <a class="btn ghost" href="docs.html">Read the docs</a>
+    </div>
   </section>
 
   <footer>
-    <p class="fclaim">SKRSI produces typed observations, evaluations, and proposals. It does not own workflow state or authorization. Improvement is never inferred from throughput alone: quality, security, reviewer independence, and missingness remain gates.</p>
-    <p class="fmeta">
-      <a href="https://github.com/smilinTux/skrsi">github.com/smilinTux/skrsi</a>
-      &middot; Apache-2.0
-      &middot; Maturity tier T0, no key material
-      &middot; <a href="https://skworld.io/">SKWorld</a>
-    </p>
+    <p class="fmain">SKRSI is built in the open by <a href="https://github.com/smilinTux">smilinTux</a> as part of SKWorld. Maturity tier T0, no key material.</p>
+    <p class="fmeta"><a href="https://github.com/smilinTux/skrsi">github.com/smilinTux/skrsi</a> &middot; <a href="https://skworld.io/">SKWorld</a> &middot; <a href="https://skpatch.skworld.io/">SKPatch</a> &middot; <a href="https://sksec.skworld.io/">SKSec</a> &middot; <a href="https://skmemory.skworld.io/">SKMemory</a> &middot; <a href="https://skstacks.skworld.io/">SKStacks</a> &middot; <a href="docs.html">Docs</a> &middot; Apache-2.0</p>
   </footer>
 
 </div>
+<script>
+(function(){
+  var b=document.getElementById('theme-btn');if(!b)return;
+  var root=document.documentElement;
+  function effective(){
+    var t=root.getAttribute('data-theme');if(t)return t;
+    return window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+  }
+  function label(){b.textContent=effective()==='dark'?'light mode':'dark mode';}
+  b.addEventListener('click',function(){
+    var n=effective()==='dark'?'light':'dark';
+    root.setAttribute('data-theme',n);
+    try{localStorage.setItem('skrsi-theme',n);}catch(e){}
+    label();
+  });
+  label();
+})();
+</script>
 </body>
 </html>
