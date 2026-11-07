@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "diagram_type": "dataflow",
+  "meta": {
+    "title": "SKRSI Data Flow",
+    "subtitle": "From docs/ARCHITECTURE.md section 3: metadata only on every hop, integrity and the data boundary are the protection",
+    "output": "skrsi.dataflow.html",
+    "viewBox": [
+      1080,
+      560
+    ],
+    "animation": "trace",
+    "quality_profile": "showcase"
+  },
+  "stages": [
+    {
+      "label": "Source"
+    },
+    {
+      "label": "Measure"
+    },
+    {
+      "label": "Build"
+    },
+    {
+      "label": "Record"
+    },
+    {
+      "label": "Publish and review"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "corpus",
+      "type": "database",
+      "label": "Private corpus or build",
+      "sublabel": "stays on the adopter box",
+      "stage": 0,
+      "row": 0,
+      "tag": "sensitive",
+      "width": 150
+    },
+    {
+      "id": "target",
+      "type": "backend",
+      "label": "Target JSON",
+      "sublabel": "read at the PR base",
+      "stage": 0,
+      "row": 2,
+      "tag": "public",
+      "width": 150
+    },
+    {
+      "id": "metrics",
+      "type": "backend",
+      "label": "metrics.json",
+      "sublabel": "one per side",
+      "stage": 1,
+      "row": 0,
+      "tag": "internal",
+      "width": 150
+    },
+    {
+      "id": "build",
+      "type": "backend",
+      "label": "build_evaluation.py",
+      "stage": 2,
+      "row": 1,
+      "width": 150
+    },
+    {
+      "id": "record",
+      "type": "backend",
+      "label": "Evaluation v4 record",
+      "stage": 3,
+      "row": 1,
+      "tag": "public",
+      "width": 150
+    },
+    {
+      "id": "artifact",
+      "type": "database",
+      "label": "Workflow artifact",
+      "stage": 3,
+      "row": 2,
+      "width": 150
+    },
+    {
+      "id": "comment",
+      "type": "frontend",
+      "label": "PR comment",
+      "stage": 4,
+      "row": 1,
+      "tag": "public",
+      "width": 150
+    },
+    {
+      "id": "reviewer",
+      "type": "security",
+      "label": "Independent reviewer",
+      "stage": 4,
+      "row": 2,
+      "width": 150
+    }
+  ],
+  "flows": [
+    {
+      "id": "corpus-metrics",
+      "from": "corpus",
+      "to": "metrics",
+      "label": "bench: aggregates only, dead arm = null",
+      "classification": "plaintext",
+      "variant": "emphasis"
+    },
+    {
+      "id": "target-build",
+      "from": "target",
+      "to": "build",
+      "label": "target at the PR base",
+      "classification": "public",
+      "variant": "default"
+    },
+    {
+      "id": "metrics-build",
+      "from": "metrics",
+      "to": "build",
+      "label": "base-side rules, notes as missingness",
+      "classification": "plaintext",
+      "variant": "emphasis"
+    },
+    {
+      "id": "build-record",
+      "from": "build",
+      "to": "record",
+      "label": "SHA-256 digest over inputs, cohort ids, notes",
+      "classification": "integrity, not a signature",
+      "variant": "emphasis"
+    },
+    {
+      "id": "record-artifact",
+      "from": "record",
+      "to": "artifact",
+      "label": "artifact upload, default retention",
+      "variant": "dashed",
+      "labelDy": 25
+    },
+    {
+      "id": "record-comment",
+      "from": "record",
+      "to": "comment",
+      "label": "render",
+      "variant": "emphasis"
+    },
+    {
+      "id": "comment-reviewer",
+      "from": "comment",
+      "to": "reviewer",
+      "label": "read by",
+      "variant": "default",
+      "labelDy": 25
+    }
+  ],
+  "cards": [
+    {
+      "dot": "rose",
+      "title": "Classification",
+      "items": [
+        "Sensitive never leaves the adopter box",
+        "Internal is aggregate metrics",
+        "Public is what a repository or PR shows"
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "Posture",
+      "items": [
+        "Plaintext metadata throughout: nothing here is secret",
+        "evidence_sha256 detects a changed input; it does not prove who produced the record"
+      ]
+    }
+  ]
+}

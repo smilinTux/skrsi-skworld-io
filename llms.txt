@@ -32,7 +32,7 @@ Runtime identifiers remain lowercase `skrsi`.
 - An inconclusive experiment stays inconclusive. No model, agent, or operator
   can relabel it as successful.
 - Maturity tier T0, not applicable, because the repository handles no key
-  material. Version phase: Incubating.
+  material. Version phase: Incubating v4.
 
 ## The SELF loop
 
@@ -93,8 +93,10 @@ was the skmemory-retrieval target (November 2026); see the case study.
 ## Docs
 
 - Docs viewer (renders the repo's docs/ live): https://skrsi.skworld.io/docs.html
-- Interactive architecture diagram: https://skrsi.skworld.io/diagrams/skrsi.architecture.html
-- Diagram source (Archify JSON): https://skrsi.skworld.io/diagrams/skrsi.architecture.json
+- Interactive architecture diagram: https://skrsi.skworld.io/diagrams/skrsi.architecture.html (source: https://skrsi.skworld.io/diagrams/skrsi.architecture.json)
+- Interactive data flow diagram: https://skrsi.skworld.io/diagrams/skrsi.dataflow.html (source: https://skrsi.skworld.io/diagrams/skrsi.dataflow.json)
+- Interactive pr sequence diagram: https://skrsi.skworld.io/diagrams/skrsi.sequence.html (source: https://skrsi.skworld.io/diagrams/skrsi.sequence.json)
+- The diagrams are derived from the mermaid views in docs/ARCHITECTURE.md.
 - README: https://github.com/smilinTux/skrsi/blob/main/README.md
 - SOP: https://github.com/smilinTux/skrsi/blob/main/SOP.md
 - Architecture: https://github.com/smilinTux/skrsi/blob/main/docs/ARCHITECTURE.md
