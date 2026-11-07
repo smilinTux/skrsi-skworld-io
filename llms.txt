@@ -32,7 +32,7 @@ Runtime identifiers remain lowercase `skrsi`.
 - An inconclusive experiment stays inconclusive. No model, agent, or operator
   can relabel it as successful.
 - Maturity tier T0, not applicable, because the repository handles no key
-  material. Version phase: Incubating v3.
+  material. Version phase: Incubating.
 
 ## The SELF loop
 
@@ -56,8 +56,11 @@ gates remain authoritative.
 - target-v2: bounded objective, measures, invariants, stop rules, expiry,
   rollback owner.
 - event-envelope-v1: attributable metadata, lineage, hashes, redaction class.
+- evaluation-v4: evaluation v3 plus evidence_class and an instrument
+  self-description. A pass is impossible for synthetic evidence or when the
+  instrument does not run production code. New producers use v4.
 - evaluation-v3: independent participants, complete PASS metrics, quality
-  gates, missingness, evidence-bound outcome.
+  gates, missingness, evidence-bound outcome. Immutable, superseded by v4.
 - feedback-handoff-v1: routes a proposal to an existing authority without
   granting permission to act.
 
@@ -77,6 +80,38 @@ identifier and file. Unknown properties fail validation. Timestamps are RFC
    no failed guardrail and no missingness entry; feedback is proposal-only;
    stop, expiry, rollback, and recovery are tested; no valid record grants
    merge, deployment, credential, or actuation power.
+
+## In practice
+
+Adoption is one caller workflow plus a target file. The reusable evaluate.yml
+workflow runs the repo's bench on the PR head and at the base, builds an
+evaluation v4 record, and upserts one PR comment per target. It is advisory:
+it never fails the PR and must not be a required check. Outcome precedence is
+regression, then fail, then inconclusive, then pass. The first code adopter
+was the skmemory-retrieval target (November 2026); see the case study.
+
+## Docs
+
+- Docs viewer (renders the repo's docs/ live): https://skrsi.skworld.io/docs.html
+- Interactive architecture diagram: https://skrsi.skworld.io/diagrams/skrsi.architecture.html
+- Diagram source (Archify JSON): https://skrsi.skworld.io/diagrams/skrsi.architecture.json
+- README: https://github.com/smilinTux/skrsi/blob/main/README.md
+- SOP: https://github.com/smilinTux/skrsi/blob/main/SOP.md
+- Architecture: https://github.com/smilinTux/skrsi/blob/main/docs/ARCHITECTURE.md
+- Contracts: https://github.com/smilinTux/skrsi/blob/main/docs/CONTRACTS.md
+- Adopter guide: https://github.com/smilinTux/skrsi/blob/main/docs/ADOPTER-GUIDE.md
+- Conformance: https://github.com/smilinTux/skrsi/blob/main/docs/CONFORMANCE.md
+- Case study, skmemory retrieval: https://github.com/smilinTux/skrsi/blob/main/docs/CASE-STUDY-SKMEMORY-RETRIEVAL.md
+- Lane playbook: https://github.com/smilinTux/skrsi/blob/main/docs/PLAYBOOK-LANES.md
+
+## Related sites
+
+- SKWorld: https://skworld.io/
+- SKPatch: https://skpatch.skworld.io/
+- SKSec: https://sksec.skworld.io/
+- SKMemory: https://skmemory.skworld.io/
+- SKStacks: https://skstacks.skworld.io/
+- SKCapstone: https://skcapstone.skworld.io/
 
 ## Links
 

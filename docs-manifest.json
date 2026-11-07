@@ -1,0 +1,37 @@
+{
+  "repo": "smilinTux/skrsi",
+  "branch": "main",
+  "path": "docs",
+  "generated": "2026-11-07",
+  "note": "Committed fallback for the /docs viewer when the GitHub Contents API is unavailable or rate-limited. Regenerate from: python docs-manifest-gen.py smilinTux/skrsi --out docs-manifest.json",
+  "docs": [
+    {
+      "name": "ADOPTER-GUIDE.md",
+      "title": "Adopter guide"
+    },
+    {
+      "name": "ARCHITECTURE.md",
+      "title": "SKRSI architecture"
+    },
+    {
+      "name": "CASE-STUDY-SKMEMORY-RETRIEVAL.md",
+      "title": "Case study: the first code adopter"
+    },
+    {
+      "name": "CONFORMANCE.md",
+      "title": "Conformance"
+    },
+    {
+      "name": "CONTRACTS.md",
+      "title": "Public contract catalog"
+    },
+    {
+      "name": "MIGRATION-V2-V3.md",
+      "title": "Evaluation v2 to v3 migration"
+    },
+    {
+      "name": "PLAYBOOK-LANES.md",
+      "title": "Lane playbook"
+    }
+  ]
+}
