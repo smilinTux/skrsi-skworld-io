@@ -38,11 +38,14 @@ repeated here deliberately.
 
 ```
 index.html      the page
-style.css       the only stylesheet
+docs.html       live viewer for the upstream repo's docs/*.md, plus diagram links
+docs-manifest.json  committed fallback index for docs.html (refreshed daily)
+diagrams/       Archify JSON sources and their generated interactive HTML
+style.css       the shared stylesheet (skworld.io design tokens)
 CNAME           custom domain for GitHub Pages
 .nojekyll       serve files verbatim, no Jekyll processing
 robots.txt      crawler policy, AI crawlers explicitly welcomed
-sitemap.xml     single-URL sitemap
+sitemap.xml     sitemap: home, docs, diagrams
 llms.txt        machine-readable summary for language models
 og-image.svg    social card source
 og-image.png    social card, 1200x630, referenced by og:image
@@ -71,5 +74,9 @@ python3 -m http.server 8080
   well-formedness with the Python standard library, and verifies every internal
   link and anchor resolves.
 - `secret-scan`: runs the pinned gitleaks binary over the full history.
+- `archify`: regenerates `diagrams/*.html` from `diagrams/*.json` and fails a PR
+  whose committed HTML is stale.
+- `refresh-docs-manifest`: daily, regenerates `docs-manifest.json` from the
+  upstream `docs/` folder.
 
 License: Apache-2.0.
