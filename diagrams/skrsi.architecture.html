@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="generator" content="archify 3.2.0">
   <meta name="archify-reader-contract" content="declared-wide-v1">
-  <title>SKRSI Evidence-First Improvement Loop Diagram</title>
+  <title>SKRSI Architecture Diagram</title>
   <script>
     // Resolve the theme before first paint so light-preference users don't
     // see a dark flash. The toolbar script below re-applies with UI state.
@@ -5193,9 +5193,9 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
            data-preset-badge-blueprint="BLUEPRINT / REV 01"
            data-preset-badge-editorial="EDITORIAL / FIELD NOTE">
         <div class="pulse-dot"></div>
-        <h1>SKRSI Evidence-First Improvement Loop</h1>
+        <h1>SKRSI Architecture</h1>
       </div>
-      <p class="subtitle">Versioned target to bounded collector to deterministic evaluator to independent review, then a proposal or a lesson, never an actuation</p>
+      <p class="subtitle">System context and components, from docs/ARCHITECTURE.md: contracts, stdlib tooling, GitHub workflows and lane templates. It proposes; it never authorizes.</p>
     </div>
 
 
@@ -5203,9 +5203,9 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     <!-- Main Diagram -->
     <div class="diagram-container" data-detail-level="read"
          data-preset-badge-editorial-plate="ARCHIFY / PLATE 04">
-      <svg viewBox="0 0 1360 632" role="img" lang="en" aria-labelledby="archify-diagram-title archify-diagram-description" data-animation="trace" data-preset="classic" data-quality-profile="showcase" data-node-ui="" data-reader-fit="intrinsic-height" data-reader-min-text="7.5" data-reader-primary-text="14">
-        <title id="archify-diagram-title">SKRSI Evidence-First Improvement Loop</title>
-        <desc id="archify-diagram-description">Versioned target to bounded collector to deterministic evaluator to independent review, then a proposal or a lesson, never an actuation</desc>
+      <svg viewBox="0 0 1220 700" role="img" lang="en" aria-labelledby="archify-diagram-title archify-diagram-description" data-animation="trace" data-preset="classic" data-quality-profile="showcase" data-node-ui="" data-diagram-type="architecture" data-reader-fit="authored-height">
+        <title id="archify-diagram-title">SKRSI Architecture</title>
+        <desc id="archify-diagram-description">System context and components, from docs/ARCHITECTURE.md: contracts, stdlib tooling, GitHub workflows and lane templates. It proposes; it never authorizes.</desc>
         <!-- Definitions -->
         <defs>
           <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
@@ -5250,238 +5250,325 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
         <rect width="100%" height="100%" fill="url(#grid)" />
 
         <!-- Boundaries (behind everything) -->
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="region" data-composition-frame-id="0" data-composition-frame-label="SKRSI contracts: documentation-first, no network surface" x="10" y="130" width="1120" height="402" rx="12" class="c-region" stroke-width="1"/>
-
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="security-group" data-composition-frame-id="1" data-composition-frame-label="Producer and reviewer identities must differ" x="655.1806319612904" y="270" width="249.6387360774193" height="122" rx="8" class="c-security-group" stroke-width="1"/>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="region" data-composition-frame-id="0" data-composition-frame-label="SKRSI" x="170" y="80" width="805" height="594" rx="12" class="c-region" stroke-width="1"/>
 
         <!-- Connection paths (before components for correct z-order) -->
         <g data-graph-role="automatic-crossover" style="--step:0">
-          <path data-graph-role="automatic-crossover-underlay" d="M 125 372 L 125 388 Q 125 396 133 396 L 218 396 Q 226 396 226 388 L 226 344 Q 226 336 234 336 L 250 336" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="target" data-edge-to="collector" data-edge-label="bounded ingestion" data-edge-key="0" data-edge-id="target-to-collector" data-composition-points="125,372;125,396;226,396;226,336;250,336" data-composition-crossover="halo" data-composition-independent="true" d="M 125 372 L 125 388 Q 125 396 133 396 L 218 396 Q 226 396 226 388 L 226 344 Q 226 336 234 336 L 250 336" class="a-default" data-animate="edge" style="--step:0" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 170 142 L 380 142" fill="none" stroke="var(--mask)" stroke-width="5.8" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="pr" data-edge-to="evaluate" data-edge-label="runs advisory workflow" data-edge-key="0" data-edge-id="pr-evaluate" data-composition-points="170,142;380,142" data-composition-crossover="halo" data-composition-independent="true" d="M 170 142 L 380 142" class="a-emphasis" data-animate="edge" style="--step:0" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:1">
-          <path data-graph-role="automatic-crossover-underlay" d="M 340 300 L 340 284 Q 340 276 348 276 L 438 276 Q 446 276 446 284 L 446 321 Q 446 329 454 329 L 470 329" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="collector" data-edge-to="evaluator" data-edge-label="deduplicated metadata" data-edge-key="1" data-edge-id="collector-to-evaluator" data-composition-points="340,300;340,276;446,276;446,329;470,329" data-composition-crossover="halo" data-composition-independent="true" d="M 340 300 L 340 284 Q 340 276 348 276 L 438 276 Q 446 276 446 284 L 446 321 Q 446 329 454 329 L 470 329" class="a-default" data-animate="edge" style="--step:1" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 95 430 L 95 366 Q 95 358 103 358 L 438 358 Q 446 358 446 350 L 446 334" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="live" data-edge-to="build" data-edge-label="aggregate metrics files" data-edge-key="1" data-edge-id="live-build" data-composition-points="95,430;95,358;446,358;446,334" data-composition-crossover="halo" data-composition-independent="true" d="M 95 430 L 95 366 Q 95 358 103 358 L 438 358 Q 446 358 446 350 L 446 334" class="a-default" data-animate="edge" style="--step:1" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:2">
-          <path data-graph-role="automatic-crossover-underlay" d="M 574 372 L 574 388 Q 574 396 582 396 L 758 396 Q 766 396 766 388 L 766 372" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="evaluator" data-edge-to="reviewer" data-edge-label="quality-gated comparison" data-edge-key="2" data-edge-id="evaluator-to-reviewer" data-composition-points="574,372;574,396;766,396;766,372" data-composition-crossover="halo" data-composition-independent="true" d="M 574 372 L 574 388 Q 574 396 582 396 L 758 396 Q 766 396 766 388 L 766 372" class="a-default" data-animate="edge" style="--step:2" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 460 174 L 460 270" fill="none" stroke="var(--mask)" stroke-width="5.8" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="evaluate" data-edge-to="build" data-edge-label="builds the record" data-edge-key="2" data-edge-id="evaluate-build" data-composition-points="460,174;460,270" data-composition-crossover="halo" data-composition-independent="true" d="M 460 174 L 460 270" class="a-emphasis" data-animate="edge" style="--step:2" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:3">
-          <path data-graph-role="automatic-crossover-underlay" d="M 870 316 L 938 316 Q 946 316 946 308 L 946 232" fill="none" stroke="var(--mask)" stroke-width="5.8" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="reviewer" data-edge-to="feedback" data-edge-label="PASS" data-edge-key="3" data-edge-id="reviewer-to-feedback" data-composition-points="870,316;946,316;946,232" data-composition-crossover="halo" data-composition-independent="true" d="M 870 316 L 938 316 Q 946 316 946 308 L 946 232" class="a-emphasis" data-animate="edge" style="--step:3" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 476.1 270 L 476.1 254 Q 476.1 246 484.1 246 L 632 246 Q 640 246 640 254 L 640 270" fill="none" stroke="var(--mask)" stroke-width="5.8" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="build" data-edge-to="report" data-edge-label="evaluation v4 record" data-edge-key="3" data-edge-id="build-report" data-composition-points="476.1,270;476.1,246;640,246;640,270" data-composition-crossover="halo" data-composition-independent="true" d="M 476.1 270 L 476.1 254 Q 476.1 246 484.1 246 L 632 246 Q 640 246 640 254 L 640 270" class="a-emphasis" data-animate="edge" style="--step:3" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:4">
-          <path data-graph-role="automatic-crossover-underlay" d="M 870 356 L 938 356 Q 946 356 946 364 L 946 440" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="reviewer" data-edge-to="lesson" data-edge-label="FAIL or INCONCLUSIVE" data-edge-key="4" data-edge-id="reviewer-to-lesson" data-composition-points="870,356;946,356;946,440" data-composition-crossover="halo" data-composition-independent="true" d="M 870 356 L 938 356 Q 946 356 946 364 L 946 440" class="a-dashed" data-animate="edge" style="--step:4" stroke-width="1.5" marker-end="url(#arrowhead-dashed)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 280 270 L 280 254 Q 280 246 288 246 L 436.95 246 Q 444.95 246 444.95 254 L 444.95 270" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="telemetry" data-edge-to="build" data-edge-label="metrics" data-edge-key="4" data-edge-id="telemetry-build" data-composition-points="280,270;280,246;444.95,246;444.95,270" data-composition-crossover="halo" data-composition-independent="true" d="M 280 270 L 280 254 Q 280 246 288 246 L 436.95 246 Q 444.95 246 444.95 254 L 444.95 270" class="a-default" data-animate="edge" style="--step:4" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:5">
-          <path data-graph-role="automatic-crossover-underlay" d="M 1100 196 L 1116 196 Q 1124 196 1124 188 L 1124 144 Q 1124 136 1132 136 L 1222 136 Q 1230 136 1230 144 L 1230 160" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="feedback" data-edge-to="gates" data-edge-label="proposal, no authority granted" data-edge-key="5" data-edge-id="feedback-to-gates" data-composition-points="1100,196;1124,196;1124,136;1230,136;1230,160" data-composition-crossover="halo" data-composition-independent="true" d="M 1100 196 L 1116 196 Q 1124 196 1124 188 L 1124 144 Q 1124 136 1132 136 L 1222 136 Q 1230 136 1230 144 L 1230 160" class="a-security" data-animate="edge" style="--step:5" stroke-width="1.5" marker-end="url(#arrowhead-security)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 640 174 L 640 190 Q 640 198 632 198 L 483.05 198 Q 475.05 198 475.05 190 L 475.05 174" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="selftest" data-edge-to="evaluate" data-edge-label="exercises" data-edge-key="5" data-edge-id="selftest-evaluate" data-composition-points="640,174;640,198;475.05,198;475.05,174" data-composition-crossover="halo" data-composition-independent="true" d="M 640 174 L 640 190 Q 640 198 632 198 L 483.05 198 Q 475.05 198 475.05 190 L 475.05 174" class="a-default" data-animate="edge" style="--step:5" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:6">
-          <path data-graph-role="automatic-crossover-underlay" d="M 1230 232 L 1230 258 Q 1230 266 1222 266 L 133 266 Q 125 266 125 274 L 125 300" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="gates" data-edge-to="target" data-edge-label="loop back" data-edge-key="6" data-edge-id="gates-to-target" data-composition-points="1230,232;1230,266;125,266;125,300" data-composition-crossover="halo" data-composition-independent="true" d="M 1230 232 L 1230 258 Q 1230 266 1222 266 L 133 266 Q 125 266 125 274 L 125 300" class="a-dashed" data-animate="edge" style="--step:6" stroke-width="1.5" marker-end="url(#arrowhead-dashed)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 820 174 L 820 270" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="docs" data-edge-to="public" data-edge-label="runs" data-edge-key="6" data-edge-id="docs-public" data-composition-points="820,174;820,270" data-composition-crossover="halo" data-composition-independent="true" d="M 820 174 L 820 270" class="a-default" data-animate="edge" style="--step:6" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:7">
-          <path data-graph-role="automatic-crossover-underlay" d="M 930 456 L 64 456 Q 56 456 56 448 L 56 372" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="lesson" data-edge-to="target" data-edge-label="loop back" data-edge-key="7" data-edge-id="lesson-to-target" data-composition-points="930,456;56,456;56,372" data-composition-crossover="halo" data-composition-independent="true" d="M 930 456 L 64 456 Q 56 456 56 448 L 56 372" class="a-dashed" data-animate="edge" style="--step:7" stroke-width="1.5" marker-end="url(#arrowhead-dashed)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 460 334 L 460 430" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="build" data-edge-to="schemas" data-edge-label="validated against" data-edge-key="7" data-edge-id="build-schemas" data-composition-points="460,334;460,430" data-composition-crossover="halo" data-composition-independent="true" d="M 460 334 L 460 430" class="a-dashed" data-animate="edge" style="--step:7" stroke-width="1.5" marker-end="url(#arrowhead-dashed)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:8">
-          <path data-graph-role="automatic-crossover-underlay" d="M 350 480 L 350 372" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="skcapstone" data-edge-to="collector" data-edge-label="implements today" data-edge-key="8" data-edge-id="skcapstone-to-collector" data-composition-points="350,480;350,372" data-composition-crossover="halo" data-composition-independent="true" d="M 350 480 L 350 372" class="a-dashed" data-animate="edge" style="--step:8" stroke-width="1.5" marker-end="url(#arrowhead-dashed)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 560 462 L 555 462 Q 550 462 550 457 L 550 314 Q 550 309 545 309 L 540 309" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="examples" data-edge-to="build" data-edge-label="reproduced by tests" data-edge-key="8" data-edge-id="examples-build" data-composition-points="560,462;550,462;550,309;540,309" data-composition-crossover="halo" data-composition-independent="true" d="M 560 462 L 555 462 Q 550 462 550 457 L 550 314 Q 550 309 545 309 L 540 309" class="a-dashed" data-animate="edge" style="--step:8" stroke-width="1.5" marker-end="url(#arrowhead-dashed)"/>
         </g>
-        <g data-graph-role="automatic-crossover" style="--step:9">
-          <path data-graph-role="automatic-crossover-underlay" d="M 450 522 L 538 522 Q 546 522 546 514 L 546 372" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="skcapstone" data-edge-to="evaluator" data-edge-label="implements today" data-edge-key="9" data-edge-id="skcapstone-to-evaluator" data-composition-points="450,522;546,522;546,372" data-composition-crossover="halo" data-composition-independent="true" d="M 450 522 L 538 522 Q 546 522 546 514 L 546 372" class="a-dashed" data-animate="edge" style="--step:9" stroke-width="1.5" marker-end="url(#arrowhead-dashed)"/>
-        </g>
+        <path data-edge-from="evaluate" data-edge-to="gh" data-edge-label="evaluation v4 record and comment" data-edge-key="9" data-edge-id="evaluate-gh" data-composition-points="460,110;460,75;960,75;960,222;1010,222" d="M 460 110 L 460 83 Q 460 75 468 75 L 952 75 Q 960 75 960 83 L 960 214 Q 960 222 968 222 L 1010 222" class="a-emphasis" data-animate="edge" style="--step:9" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
         <g data-graph-role="automatic-crossover" style="--step:10">
-          <path data-graph-role="automatic-crossover-underlay" d="M 560 372 L 560 508 Q 560 516 568 516 L 690 516" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="evaluator" data-edge-to="skdashboard" data-edge-label="bounded aggregate visibility" data-edge-key="10" data-edge-id="evaluator-to-skdashboard" data-composition-points="560,372;560,516;690,516" data-composition-crossover="halo" data-composition-independent="true" d="M 560 372 L 560 508 Q 560 516 568 516 L 690 516" class="a-dashed" data-animate="edge" style="--step:10" stroke-width="1.5" marker-end="url(#arrowhead-dashed)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 1100 254 L 1100 350" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="gh" data-edge-to="review" data-edge-label="read as evidence" data-edge-key="10" data-edge-id="gh-review" data-composition-points="1100,254;1100,350" data-composition-crossover="halo" data-composition-independent="true" d="M 1100 254 L 1100 350" class="a-default" data-animate="edge" style="--step:10" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         </g>
+        <g data-graph-role="automatic-crossover" style="--step:11">
+          <path data-graph-role="automatic-crossover-underlay" d="M 1100 414 L 1100 510" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="review" data-edge-to="authority" data-edge-label="proposal or lesson" data-edge-key="11" data-edge-id="review-authority" data-composition-points="1100,414;1100,510" data-composition-crossover="halo" data-composition-independent="true" d="M 1100 414 L 1100 510" class="a-security" data-animate="edge" style="--step:11" stroke-width="1.5" marker-end="url(#arrowhead-security)"/>
+        </g>
+        <path data-edge-from="evaluate" data-edge-to="actuation" data-edge-label="never" data-edge-key="12" data-edge-id="evaluate-actuation" data-composition-points="460,110;460,52;1010,52" d="M 460 110 L 460 60 Q 460 52 468 52 L 1010 52" class="a-dashed" data-animate="edge" style="--step:12" stroke-width="1.5" marker-end="url(#arrowhead-dashed)"/>
 
         <!-- Components -->
-        <g id="node-target" data-node-id="target" data-node-label="Target Registry" tabindex="0" role="button" aria-label="Focus Target Registry, metrics, stop rules, expiry, SKRSI contracts: documentation-first, no network surface" aria-pressed="false" data-node-kind="backend" data-node-sublabel="metrics, stop rules, expiry" data-node-context="SKRSI contracts: documentation-first, no network surface">
-          <title>Target Registry · metrics, stop rules, expiry · SKRSI contracts: documentation-first, no network surface</title>
-          <rect x="40" y="300" width="170" height="72" rx="8" class="c-mask"/>
-          <rect x="40" y="300" width="170" height="72" rx="8" class="c-backend" data-animate="node" style="--step:0" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(46 306) scale(0.6875)">
+        <g id="node-pr" data-node-id="pr" data-node-label="Pull request" tabindex="0" role="button" aria-label="Focus Pull request, in an adopter repo, Architecture component" aria-pressed="false" data-node-kind="external" data-node-sublabel="in an adopter repo" data-node-context="Architecture component">
+          <title>Pull request · in an adopter repo · Architecture component</title>
+          <rect x="20" y="110" width="150" height="64" rx="8" class="c-mask"/>
+          <rect x="20" y="110" width="150" height="64" rx="8" class="c-external" data-animate="node" style="--step:0" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="external" class="semantic-sigil s-external" transform="translate(26 116) scale(0.6875)">
+            <rect x="2.5" y="5" width="8.5" height="8" rx="1.5"/>
+            <path d="M8 2.5h5.5V8M13.5 2.5 7.5 8.5"/>
+          </g>
+          <text data-node-label="" data-detail-anchor="" x="95" y="140" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Pull request</text>
+        <text data-detail="context" x="95" y="156" class="t-muted" font-size="9" text-anchor="middle">in an adopter repo</text>
+        </g>
+
+        <g id="node-live" data-node-id="live" data-node-label="Adopter live runner" tabindex="0" role="button" aria-label="Focus Adopter live runner, on its own box, Architecture component" aria-pressed="false" data-node-kind="external" data-node-sublabel="on its own box" data-node-context="Architecture component">
+          <title>Adopter live runner · on its own box · Architecture component</title>
+          <rect x="20" y="430" width="150" height="64" rx="8" class="c-mask"/>
+          <rect x="20" y="430" width="150" height="64" rx="8" class="c-external" data-animate="node" style="--step:1" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="external" class="semantic-sigil s-external" transform="translate(26 436) scale(0.6875)">
+            <rect x="2.5" y="5" width="8.5" height="8" rx="1.5"/>
+            <path d="M8 2.5h5.5V8M13.5 2.5 7.5 8.5"/>
+          </g>
+          <text data-node-label="" data-detail-anchor="" x="95" y="460" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Adopter live runner</text>
+        <text data-detail="context" x="95" y="476" class="t-muted" font-size="9" text-anchor="middle">on its own box</text>
+        </g>
+
+        <g id="node-selftest" data-node-id="selftest" data-node-label="evaluate-selftest.yml" tabindex="0" role="button" aria-label="Focus evaluate-selftest.yml, tests the workflow, SKRSI" aria-pressed="false" data-node-kind="backend" data-node-sublabel="tests the workflow" data-node-context="SKRSI">
+          <title>evaluate-selftest.yml · tests the workflow · SKRSI</title>
+          <rect x="560" y="110" width="160" height="64" rx="8" class="c-mask"/>
+          <rect x="560" y="110" width="160" height="64" rx="8" class="c-backend" data-animate="node" style="--step:5" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(566 116) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="125" y="334" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Target Registry</text>
-        <text data-detail="context" x="125" y="350" class="t-muted" font-size="9" text-anchor="middle">metrics, stop rules, expiry</text>
+          <text data-node-label="" data-detail-anchor="" x="640" y="140" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">evaluate-selftest.yml</text>
+        <text data-detail="context" x="640" y="156" class="t-muted" font-size="9" text-anchor="middle">tests the workflow</text>
         </g>
 
-        <g id="node-collector" data-node-id="collector" data-node-label="Metadata Collector" tabindex="0" role="button" aria-label="Focus Metadata Collector, bounded ingestion, dedup, lineage, missingness, SKRSI contracts: documentation-first, no network surface" aria-pressed="false" data-node-kind="backend" data-node-sublabel="bounded ingestion, dedup, lineage, missingness" data-node-context="SKRSI contracts: documentation-first, no network surface">
-          <title>Metadata Collector · bounded ingestion, dedup, lineage, missingness · SKRSI contracts: documentation-first, no network surface</title>
-          <rect x="250" y="300" width="180" height="72" rx="8" class="c-mask"/>
-          <rect x="250" y="300" width="180" height="72" rx="8" class="c-backend" data-animate="node" style="--step:1" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(256 306) scale(0.6875)">
+        <g id="node-evaluate" data-node-id="evaluate" data-node-label="evaluate.yml" tabindex="0" role="button" aria-label="Focus evaluate.yml, reusable, advisory, SKRSI" aria-pressed="false" data-node-kind="backend" data-node-sublabel="reusable, advisory" data-node-context="SKRSI">
+          <title>evaluate.yml · reusable, advisory · SKRSI</title>
+          <rect x="380" y="110" width="160" height="64" rx="8" class="c-mask"/>
+          <rect x="380" y="110" width="160" height="64" rx="8" class="c-backend" data-animate="node" style="--step:1" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(386 116) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="340" y="334" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Metadata Collector</text>
-        <text data-detail="context" x="340" y="350" class="t-muted" font-size="6.2" text-anchor="middle">bounded ingestion, dedup, lineage, missingness</text>
+          <text data-node-label="" data-detail-anchor="" x="460" y="140" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">evaluate.yml</text>
+        <text data-detail="context" x="460" y="156" class="t-muted" font-size="9" text-anchor="middle">reusable, advisory</text>
         </g>
 
-        <g id="node-evaluator" data-node-id="evaluator" data-node-label="Deterministic Evaluator" tabindex="0" role="button" aria-label="Focus Deterministic Evaluator, cohort comparison, quality gates, SKRSI contracts: documentation-first, no network surface" aria-pressed="false" data-node-kind="backend" data-node-sublabel="cohort comparison, quality gates" data-node-context="SKRSI contracts: documentation-first, no network surface">
-          <title>Deterministic Evaluator · cohort comparison, quality gates · SKRSI contracts: documentation-first, no network surface</title>
-          <rect x="470" y="300" width="180" height="72" rx="8" class="c-mask"/>
-          <rect x="470" y="300" width="180" height="72" rx="8" class="c-backend" data-animate="node" style="--step:2" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(476 306) scale(0.6875)">
+        <g id="node-docs" data-node-id="docs" data-node-label="docs.yml" tabindex="0" role="button" aria-label="Focus docs.yml, required check: validate, SKRSI" aria-pressed="false" data-node-kind="backend" data-node-sublabel="required check: validate" data-node-context="SKRSI">
+          <title>docs.yml · required check: validate · SKRSI</title>
+          <rect x="740" y="110" width="160" height="64" rx="8" class="c-mask"/>
+          <rect x="740" y="110" width="160" height="64" rx="8" class="c-backend" data-animate="node" style="--step:6" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(746 116) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="560" y="334" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Deterministic Evaluator</text>
-        <text data-detail="context" x="560" y="350" class="t-muted" font-size="8.9" text-anchor="middle">cohort comparison, quality gates</text>
+          <text data-node-label="" data-detail-anchor="" x="820" y="140" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">docs.yml</text>
+        <text data-detail="context" x="820" y="156" class="t-muted" font-size="9" text-anchor="middle">required check: validate</text>
         </g>
 
-        <g id="node-reviewer" data-node-id="reviewer" data-node-label="Independent Review" tabindex="0" role="button" aria-label="Focus Independent Review, exact-evidence PASS, FAIL, or BLOCKED verdict, SKRSI contracts: documentation-first, no network surface › Producer and reviewer identities must differ" aria-pressed="false" data-node-kind="security" data-node-sublabel="exact-evidence PASS, FAIL, or BLOCKED verdict" data-node-context="SKRSI contracts: documentation-first, no network surface › Producer and reviewer identities must differ">
-          <title>Independent Review · exact-evidence PASS, FAIL, or BLOCKED verdict · SKRSI contracts: documentation-first, no network surface › Producer and reviewer identities must differ</title>
-          <rect x="690" y="300" width="180" height="72" rx="8" class="c-mask"/>
-          <rect x="690" y="300" width="180" height="72" rx="8" class="c-security" data-animate="node" style="--step:3" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="security" class="semantic-sigil s-security" transform="translate(696 306) scale(0.6875)">
-            <path d="M8 2.2 13 4v3.5c0 3.1-1.8 5.4-5 6.5-3.2-1.1-5-3.4-5-6.5V4Z"/>
-            <path d="m5.8 8 1.5 1.5 3-3"/>
-          </g>
-          <text data-node-label="" data-detail-anchor="" x="780" y="334" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Independent Review</text>
-        <text data-detail="context" x="780" y="350" class="t-muted" font-size="6.3" text-anchor="middle">exact-evidence PASS, FAIL, or BLOCKED verdict</text>
-        </g>
-
-        <g id="node-feedback" data-node-id="feedback" data-node-label="Feedback Proposal" tabindex="0" role="button" aria-label="Focus Feedback Proposal, proposal only, grants no authority, SKRSI contracts: documentation-first, no network surface" aria-pressed="false" data-node-kind="backend" data-node-sublabel="proposal only, grants no authority" data-node-context="SKRSI contracts: documentation-first, no network surface">
-          <title>Feedback Proposal · proposal only, grants no authority · SKRSI contracts: documentation-first, no network surface</title>
-          <rect x="930" y="160" width="170" height="72" rx="8" class="c-mask"/>
-          <rect x="930" y="160" width="170" height="72" rx="8" class="c-backend" data-animate="node" style="--step:4" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(936 166) scale(0.6875)">
+        <g id="node-telemetry" data-node-id="telemetry" data-node-label="build_telemetry.py" tabindex="0" role="button" aria-label="Focus build_telemetry.py, sk-build-quality metrics, SKRSI" aria-pressed="false" data-node-kind="backend" data-node-sublabel="sk-build-quality metrics" data-node-context="SKRSI">
+          <title>build_telemetry.py · sk-build-quality metrics · SKRSI</title>
+          <rect x="200" y="270" width="160" height="64" rx="8" class="c-mask"/>
+          <rect x="200" y="270" width="160" height="64" rx="8" class="c-backend" data-animate="node" style="--step:4" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(206 276) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="1015" y="194" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Feedback Proposal</text>
-        <text data-detail="context" x="1015" y="210" class="t-muted" font-size="7.9" text-anchor="middle">proposal only, grants no authority</text>
+          <text data-node-label="" data-detail-anchor="" x="280" y="300" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">build_telemetry.py</text>
+        <text data-detail="context" x="280" y="316" class="t-muted" font-size="9" text-anchor="middle">sk-build-quality metrics</text>
         </g>
 
-        <g id="node-lesson" data-node-id="lesson" data-node-label="Recorded Lesson" tabindex="0" role="button" aria-label="Focus Recorded Lesson, versioned, attributable, never relabeled, SKRSI contracts: documentation-first, no network surface" aria-pressed="false" data-node-kind="database" data-node-sublabel="versioned, attributable, never relabeled" data-node-context="SKRSI contracts: documentation-first, no network surface">
-          <title>Recorded Lesson · versioned, attributable, never relabeled · SKRSI contracts: documentation-first, no network surface</title>
-          <rect x="930" y="440" width="170" height="72" rx="8" class="c-mask"/>
-          <rect x="930" y="440" width="170" height="72" rx="8" class="c-database" data-animate="node" style="--step:5" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="database" class="semantic-sigil s-database" transform="translate(936 446) scale(0.6875)">
+        <g id="node-build" data-node-id="build" data-node-label="build_evaluation.py" tabindex="0" role="button" aria-label="Focus build_evaluation.py, build, validate_v4, SKRSI" aria-pressed="false" data-node-kind="backend" data-node-sublabel="build, validate_v4" data-node-context="SKRSI">
+          <title>build_evaluation.py · build, validate_v4 · SKRSI</title>
+          <rect x="380" y="270" width="160" height="64" rx="8" class="c-mask"/>
+          <rect x="380" y="270" width="160" height="64" rx="8" class="c-backend" data-animate="node" style="--step:2" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(386 276) scale(0.6875)">
+            <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
+          </g>
+          <text data-node-label="" data-detail-anchor="" x="460" y="300" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">build_evaluation.py</text>
+        <text data-detail="context" x="460" y="316" class="t-muted" font-size="9" text-anchor="middle">build, validate_v4</text>
+        </g>
+
+        <g id="node-report" data-node-id="report" data-node-label="evaluation_report.py" tabindex="0" role="button" aria-label="Focus evaluation_report.py, render, SKRSI" aria-pressed="false" data-node-kind="backend" data-node-sublabel="render" data-node-context="SKRSI">
+          <title>evaluation_report.py · render · SKRSI</title>
+          <rect x="560" y="270" width="160" height="64" rx="8" class="c-mask"/>
+          <rect x="560" y="270" width="160" height="64" rx="8" class="c-backend" data-animate="node" style="--step:4" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(566 276) scale(0.6875)">
+            <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
+          </g>
+          <text data-node-label="" data-detail-anchor="" x="640" y="300" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">evaluation_report.py</text>
+        <text data-detail="context" x="640" y="316" class="t-muted" font-size="9" text-anchor="middle">render</text>
+        </g>
+
+        <g id="node-public" data-node-id="public" data-node-label="validate_public.py" tabindex="0" role="button" aria-label="Focus validate_public.py, public checks, SKRSI" aria-pressed="false" data-node-kind="backend" data-node-sublabel="public checks" data-node-context="SKRSI">
+          <title>validate_public.py · public checks · SKRSI</title>
+          <rect x="740" y="270" width="160" height="64" rx="8" class="c-mask"/>
+          <rect x="740" y="270" width="160" height="64" rx="8" class="c-backend" data-animate="node" style="--step:7" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(746 276) scale(0.6875)">
+            <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
+          </g>
+          <text data-node-label="" data-detail-anchor="" x="820" y="300" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">validate_public.py</text>
+        <text data-detail="context" x="820" y="316" class="t-muted" font-size="9" text-anchor="middle">public checks</text>
+        </g>
+
+        <g id="node-migrate" data-node-id="migrate" data-node-label="migrate_evaluation_v2_to_v3.py" tabindex="0" role="button" aria-label="Focus migrate_evaluation_v2_to_v3.py, v2 to v3, SKRSI" aria-pressed="false" data-node-kind="backend" data-node-sublabel="v2 to v3" data-node-context="SKRSI">
+          <title>migrate_evaluation_v2_to_v3.py · v2 to v3 · SKRSI</title>
+          <rect x="740" y="430" width="205" height="64" rx="8" class="c-mask"/>
+          <rect x="740" y="430" width="205" height="64" rx="8" class="c-backend" data-animate="node" style="--step:9" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(746 436) scale(0.6875)">
+            <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
+          </g>
+          <text data-node-label="" data-detail-anchor="" x="842.5" y="460" class="t-primary" font-size="10.9" font-weight="600" text-anchor="middle">migrate_evaluation_v2_to_v3.py</text>
+        <text data-detail="context" x="842.5" y="476" class="t-muted" font-size="9" text-anchor="middle">v2 to v3</text>
+        </g>
+
+        <g id="node-schemas" data-node-id="schemas" data-node-label="schemas/*.schema.json" tabindex="0" role="button" aria-label="Focus schemas/*.schema.json, record contracts, SKRSI" aria-pressed="false" data-node-kind="database" data-node-sublabel="record contracts" data-node-context="SKRSI">
+          <title>schemas/*.schema.json · record contracts · SKRSI</title>
+          <rect x="380" y="430" width="160" height="64" rx="8" class="c-mask"/>
+          <rect x="380" y="430" width="160" height="64" rx="8" class="c-database" data-animate="node" style="--step:8" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="database" class="semantic-sigil s-database" transform="translate(386 436) scale(0.6875)">
             <ellipse cx="8" cy="4" rx="5" ry="2"/>
             <path d="M3 4v8c0 1.1 2.2 2 5 2s5-.9 5-2V4M3 8c0 1.1 2.2 2 5 2s5-.9 5-2"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="1015" y="474" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Recorded Lesson</text>
-        <text data-detail="context" x="1015" y="490" class="t-muted" font-size="6.7" text-anchor="middle">versioned, attributable, never relabeled</text>
+          <text data-node-label="" data-detail-anchor="" x="460" y="460" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">schemas/*.schema.json</text>
+        <text data-detail="context" x="460" y="476" class="t-muted" font-size="9" text-anchor="middle">record contracts</text>
         </g>
 
-        <g id="node-gates" data-node-id="gates" data-node-label="Existing Lifecycle Gates" tabindex="0" role="button" aria-label="Focus Existing Lifecycle Gates, adopter&#39;s own authorization, outside SKRSI, Architecture component" aria-pressed="false" data-node-kind="external" data-node-sublabel="adopter&#39;s own authorization, outside SKRSI" data-node-context="Architecture component">
-          <title>Existing Lifecycle Gates · adopter&#39;s own authorization, outside SKRSI · Architecture component</title>
-          <rect x="1140" y="160" width="180" height="72" rx="8" class="c-mask"/>
-          <rect x="1140" y="160" width="180" height="72" rx="8" class="c-external" data-animate="node" style="--step:6" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="external" class="semantic-sigil s-external" transform="translate(1146 166) scale(0.6875)">
+        <g id="node-examples" data-node-id="examples" data-node-label="examples/" tabindex="0" role="button" aria-label="Focus examples/, golden records, SKRSI" aria-pressed="false" data-node-kind="database" data-node-sublabel="golden records" data-node-context="SKRSI">
+          <title>examples/ · golden records · SKRSI</title>
+          <rect x="560" y="430" width="160" height="64" rx="8" class="c-mask"/>
+          <rect x="560" y="430" width="160" height="64" rx="8" class="c-database" data-animate="node" style="--step:8" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="database" class="semantic-sigil s-database" transform="translate(566 436) scale(0.6875)">
+            <ellipse cx="8" cy="4" rx="5" ry="2"/>
+            <path d="M3 4v8c0 1.1 2.2 2 5 2s5-.9 5-2V4M3 8c0 1.1 2.2 2 5 2s5-.9 5-2"/>
+          </g>
+          <text data-node-label="" data-detail-anchor="" x="640" y="460" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">examples/</text>
+        <text data-detail="context" x="640" y="476" class="t-muted" font-size="9" text-anchor="middle">golden records</text>
+        </g>
+
+        <g id="node-land" data-node-id="land" data-node-label="templates/land.sh" tabindex="0" role="button" aria-label="Focus templates/land.sh, lane landing script, SKRSI" aria-pressed="false" data-node-kind="backend" data-node-sublabel="lane landing script" data-node-context="SKRSI">
+          <title>templates/land.sh · lane landing script · SKRSI</title>
+          <rect x="380" y="590" width="160" height="64" rx="8" class="c-mask"/>
+          <rect x="380" y="590" width="160" height="64" rx="8" class="c-backend" data-animate="node" style="--step:12" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(386 596) scale(0.6875)">
+            <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
+          </g>
+          <text data-node-label="" data-detail-anchor="" x="460" y="620" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">templates/land.sh</text>
+        <text data-detail="context" x="460" y="636" class="t-muted" font-size="9" text-anchor="middle">lane landing script</text>
+        </g>
+
+        <g id="node-briefs" data-node-id="briefs" data-node-label="Worker and review briefs" tabindex="0" role="button" aria-label="Focus Worker and review briefs, lane templates, SKRSI" aria-pressed="false" data-node-kind="backend" data-node-sublabel="lane templates" data-node-context="SKRSI">
+          <title>Worker and review briefs · lane templates · SKRSI</title>
+          <rect x="560" y="590" width="160" height="64" rx="8" class="c-mask"/>
+          <rect x="560" y="590" width="160" height="64" rx="8" class="c-backend" data-animate="node" style="--step:12" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(566 596) scale(0.6875)">
+            <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
+          </g>
+          <text data-node-label="" data-detail-anchor="" x="640" y="620" class="t-primary" font-size="10.5" font-weight="600" text-anchor="middle">Worker and review briefs</text>
+        <text data-detail="context" x="640" y="636" class="t-muted" font-size="9" text-anchor="middle">lane templates</text>
+        </g>
+
+        <g id="node-gh" data-node-id="gh" data-node-label="GitHub PR comment" tabindex="0" role="button" aria-label="Focus GitHub PR comment, and workflow artifact, Architecture component" aria-pressed="false" data-node-kind="database" data-node-sublabel="and workflow artifact" data-node-context="Architecture component">
+          <title>GitHub PR comment · and workflow artifact · Architecture component</title>
+          <rect x="1010" y="190" width="180" height="64" rx="8" class="c-mask"/>
+          <rect x="1010" y="190" width="180" height="64" rx="8" class="c-database" data-animate="node" style="--step:10" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="database" class="semantic-sigil s-database" transform="translate(1016 196) scale(0.6875)">
+            <ellipse cx="8" cy="4" rx="5" ry="2"/>
+            <path d="M3 4v8c0 1.1 2.2 2 5 2s5-.9 5-2V4M3 8c0 1.1 2.2 2 5 2s5-.9 5-2"/>
+          </g>
+          <text data-node-label="" data-detail-anchor="" x="1100" y="220" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">GitHub PR comment</text>
+        <text data-detail="context" x="1100" y="236" class="t-muted" font-size="9" text-anchor="middle">and workflow artifact</text>
+        </g>
+
+        <g id="node-review" data-node-id="review" data-node-label="Independent reviewer" tabindex="0" role="button" aria-label="Focus Independent reviewer, separate identity, Architecture component" aria-pressed="false" data-node-kind="security" data-node-sublabel="separate identity" data-node-context="Architecture component">
+          <title>Independent reviewer · separate identity · Architecture component</title>
+          <rect x="1010" y="350" width="180" height="64" rx="8" class="c-mask"/>
+          <rect x="1010" y="350" width="180" height="64" rx="8" class="c-security" data-animate="node" style="--step:11" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="security" class="semantic-sigil s-security" transform="translate(1016 356) scale(0.6875)">
+            <path d="M8 2.2 13 4v3.5c0 3.1-1.8 5.4-5 6.5-3.2-1.1-5-3.4-5-6.5V4Z"/>
+            <path d="m5.8 8 1.5 1.5 3-3"/>
+          </g>
+          <text data-node-label="" data-detail-anchor="" x="1100" y="380" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Independent reviewer</text>
+        <text data-detail="context" x="1100" y="396" class="t-muted" font-size="9" text-anchor="middle">separate identity</text>
+        </g>
+
+        <g id="node-authority" data-node-id="authority" data-node-label="Existing lifecycle authority" tabindex="0" role="button" aria-label="Focus Existing lifecycle authority, decides, Architecture component" aria-pressed="false" data-node-kind="external" data-node-sublabel="decides" data-node-context="Architecture component">
+          <title>Existing lifecycle authority · decides · Architecture component</title>
+          <rect x="1010" y="510" width="180" height="64" rx="8" class="c-mask"/>
+          <rect x="1010" y="510" width="180" height="64" rx="8" class="c-external" data-animate="node" style="--step:12" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="external" class="semantic-sigil s-external" transform="translate(1016 516) scale(0.6875)">
             <rect x="2.5" y="5" width="8.5" height="8" rx="1.5"/>
             <path d="M8 2.5h5.5V8M13.5 2.5 7.5 8.5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="1230" y="194" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Existing Lifecycle Gates</text>
-        <text data-detail="context" x="1230" y="210" class="t-muted" font-size="6.8" text-anchor="middle">adopter&#39;s own authorization, outside SKRSI</text>
+          <text data-node-label="" data-detail-anchor="" x="1100" y="540" class="t-primary" font-size="10.2" font-weight="600" text-anchor="middle">Existing lifecycle authority</text>
+        <text data-detail="context" x="1100" y="556" class="t-muted" font-size="9" text-anchor="middle">decides</text>
         </g>
 
-        <g id="node-skcapstone" data-node-id="skcapstone" data-node-label="SKCapstone" tabindex="0" role="button" aria-label="Focus SKCapstone, current runtime home (skrsi_* modules), Architecture component" aria-pressed="false" data-node-kind="external" data-node-sublabel="current runtime home (skrsi_* modules)" data-node-context="Architecture component">
-          <title>SKCapstone · current runtime home (skrsi_* modules) · Architecture component</title>
-          <rect x="250" y="480" width="200" height="84" rx="8" class="c-mask"/>
-          <rect x="250" y="480" width="200" height="84" rx="8" class="c-external" data-animate="node" style="--step:8" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="external" class="semantic-sigil s-external" transform="translate(256 486) scale(0.6875)">
+        <g id="node-actuation" data-node-id="actuation" data-node-label="Merge, deploy, actuation" tabindex="0" role="button" aria-label="Focus Merge, deploy, actuation, never by SKRSI, Architecture component" aria-pressed="false" data-node-kind="external" data-node-sublabel="never by SKRSI" data-node-context="Architecture component">
+          <title>Merge, deploy, actuation · never by SKRSI · Architecture component</title>
+          <rect x="1010" y="20" width="180" height="64" rx="8" class="c-mask"/>
+          <rect x="1010" y="20" width="180" height="64" rx="8" class="c-external" data-animate="node" style="--step:12" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="external" class="semantic-sigil s-external" transform="translate(1016 26) scale(0.6875)">
             <rect x="2.5" y="5" width="8.5" height="8" rx="1.5"/>
             <path d="M8 2.5h5.5V8M13.5 2.5 7.5 8.5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="350" y="520" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">SKCapstone</text>
-        <text data-detail="context" x="350" y="536" class="t-muted" font-size="8.4" text-anchor="middle">current runtime home (skrsi_* modules)</text>
-        </g>
-
-        <g id="node-skdashboard" data-node-id="skdashboard" data-node-label="SKDashboard" tabindex="0" role="button" aria-label="Focus SKDashboard, authorized aggregate visibility only, Architecture component" aria-pressed="false" data-node-kind="external" data-node-sublabel="authorized aggregate visibility only" data-node-context="Architecture component">
-          <title>SKDashboard · authorized aggregate visibility only · Architecture component</title>
-          <rect x="690" y="480" width="180" height="72" rx="8" class="c-mask"/>
-          <rect x="690" y="480" width="180" height="72" rx="8" class="c-external" data-animate="node" style="--step:11" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="external" class="semantic-sigil s-external" transform="translate(696 486) scale(0.6875)">
-            <rect x="2.5" y="5" width="8.5" height="8" rx="1.5"/>
-            <path d="M8 2.5h5.5V8M13.5 2.5 7.5 8.5"/>
-          </g>
-          <text data-node-label="" data-detail-anchor="" x="780" y="514" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">SKDashboard</text>
-        <text data-detail="context" x="780" y="530" class="t-muted" font-size="7.9" text-anchor="middle">authorized aggregate visibility only</text>
+          <text data-node-label="" data-detail-anchor="" x="1100" y="50" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Merge, deploy, actuation</text>
+        <text data-detail="context" x="1100" y="66" class="t-muted" font-size="9" text-anchor="middle">never by SKRSI</text>
         </g>
 
         <!-- Connection labels -->
-        <g data-detail="context" data-edge-from="target" data-edge-to="collector" data-edge-label="bounded ingestion" data-edge-key="0" data-edge-id="target-to-collector">
-          <rect x="129.7" y="376" width="91.6" height="14" rx="3" class="c-mask"/>
-          <text x="175.5" y="386" class="t-edge-default" font-size="8" text-anchor="middle">bounded ingestion</text>
+        <g data-detail="context" data-edge-from="pr" data-edge-to="evaluate" data-edge-label="runs advisory workflow" data-edge-key="0" data-edge-id="pr-evaluate">
+          <rect x="217.2" y="122" width="115.6" height="14" rx="3" class="c-mask"/>
+          <text x="275" y="132" class="t-edge-emphasis" font-size="8" text-anchor="middle">runs advisory workflow</text>
         </g>
-        <g data-detail="context" data-edge-from="collector" data-edge-to="evaluator" data-edge-label="deduplicated metadata" data-edge-key="1" data-edge-id="collector-to-evaluator">
-          <rect x="329.20000000000005" y="282.25" width="110.8" height="14" rx="3" class="c-mask"/>
-          <text x="384.6" y="292.25" class="t-edge-default" font-size="8" text-anchor="middle">deduplicated metadata</text>
+        <g data-detail="context" data-edge-from="live" data-edge-to="build" data-edge-label="aggregate metrics files" data-edge-key="1" data-edge-id="live-build">
+          <rect x="210.3" y="338" width="120.39999999999999" height="14" rx="3" class="c-mask"/>
+          <text x="270.5" y="348" class="t-edge-default" font-size="8" text-anchor="middle">aggregate metrics files</text>
         </g>
-        <g data-detail="context" data-edge-from="evaluator" data-edge-to="reviewer" data-edge-label="quality-gated comparison" data-edge-key="2" data-edge-id="evaluator-to-reviewer">
-          <rect x="607.4" y="376" width="125.19999999999999" height="14" rx="3" class="c-mask"/>
-          <text x="670" y="386" class="t-edge-default" font-size="8" text-anchor="middle">quality-gated comparison</text>
+        <g data-detail="context" data-edge-from="evaluate" data-edge-to="build" data-edge-label="builds the record" data-edge-key="2" data-edge-id="evaluate-build">
+          <rect x="362.4" y="191" width="91.6" height="14" rx="3" class="c-mask"/>
+          <text x="408.2" y="201" class="t-edge-emphasis" font-size="8" text-anchor="middle">builds the record</text>
         </g>
-        <g data-detail="context" data-edge-from="reviewer" data-edge-to="feedback" data-edge-label="PASS" data-edge-key="3" data-edge-id="reviewer-to-feedback">
-          <rect x="893" y="326" width="30" height="14" rx="3" class="c-mask"/>
-          <text x="908" y="336" class="t-edge-emphasis" font-size="8" text-anchor="middle">PASS</text>
+        <g data-detail="context" data-edge-from="build" data-edge-to="report" data-edge-label="evaluation v4 record" data-edge-key="3" data-edge-id="build-report">
+          <rect x="505.04999999999995" y="226" width="106" height="14" rx="3" class="c-mask"/>
+          <text x="558.05" y="236" class="t-edge-emphasis" font-size="8" text-anchor="middle">evaluation v4 record</text>
         </g>
-        <g data-detail="context" data-edge-from="reviewer" data-edge-to="lesson" data-edge-label="FAIL or INCONCLUSIVE" data-edge-key="4" data-edge-id="reviewer-to-lesson">
-          <rect x="893" y="378" width="106" height="14" rx="3" class="c-mask"/>
-          <text x="946" y="388" class="t-edge-dashed" font-size="8" text-anchor="middle">FAIL or INCONCLUSIVE</text>
+        <g data-detail="context" data-edge-from="telemetry" data-edge-to="build" data-edge-label="metrics" data-edge-key="4" data-edge-id="telemetry-build">
+          <rect x="340.675" y="226" width="43.6" height="14" rx="3" class="c-mask"/>
+          <text x="362.475" y="236" class="t-edge-default" font-size="8" text-anchor="middle">metrics</text>
         </g>
-        <g data-detail="context" data-edge-from="feedback" data-edge-to="gates" data-edge-label="proposal, no authority granted" data-edge-key="5" data-edge-id="feedback-to-gates">
-          <rect x="1047" y="146" width="154" height="14" rx="3" class="c-mask"/>
-          <text x="1124" y="156" class="t-edge-security" font-size="8" text-anchor="middle">proposal, no authority granted</text>
+        <g data-detail="context" data-edge-from="selftest" data-edge-to="evaluate" data-edge-label="exercises" data-edge-key="5" data-edge-id="selftest-evaluate">
+          <rect x="530.925" y="178" width="53.199999999999996" height="14" rx="3" class="c-mask"/>
+          <text x="557.525" y="188" class="t-edge-default" font-size="8" text-anchor="middle">exercises</text>
         </g>
-        <g data-detail="context" data-edge-from="gates" data-edge-to="target" data-edge-label="loop back" data-edge-key="6" data-edge-id="gates-to-target">
-          <rect x="650.9" y="246" width="53.199999999999996" height="14" rx="3" class="c-mask"/>
-          <text x="677.5" y="256" class="t-edge-dashed" font-size="8" text-anchor="middle">loop back</text>
+        <g data-detail="context" data-edge-from="docs" data-edge-to="public" data-edge-label="runs" data-edge-key="6" data-edge-id="docs-public">
+          <rect x="784" y="215" width="30" height="14" rx="3" class="c-mask"/>
+          <text x="799" y="225" class="t-edge-default" font-size="8" text-anchor="middle">runs</text>
         </g>
-        <g data-detail="context" data-edge-from="lesson" data-edge-to="target" data-edge-label="loop back" data-edge-key="7" data-edge-id="lesson-to-target">
-          <rect x="29.400000000000002" y="394" width="53.199999999999996" height="14" rx="3" class="c-mask"/>
-          <text x="56" y="404" class="t-edge-dashed" font-size="8" text-anchor="middle">loop back</text>
+        <g data-detail="context" data-edge-from="build" data-edge-to="schemas" data-edge-label="validated against" data-edge-key="7" data-edge-id="build-schemas">
+          <rect x="362.4" y="375" width="91.6" height="14" rx="3" class="c-mask"/>
+          <text x="408.2" y="385" class="t-edge-dashed" font-size="8" text-anchor="middle">validated against</text>
         </g>
-        <g data-detail="context" data-edge-from="skcapstone" data-edge-to="collector" data-edge-label="implements today" data-edge-key="8" data-edge-id="skcapstone-to-collector">
-          <rect x="306.6" y="460" width="86.8" height="14" rx="3" class="c-mask"/>
-          <text x="350" y="470" class="t-edge-dashed" font-size="8" text-anchor="middle">implements today</text>
+        <g data-detail="context" data-edge-from="examples" data-edge-to="build" data-edge-label="reproduced by tests" data-edge-key="8" data-edge-id="examples-build">
+          <rect x="499.4" y="365.5" width="101.2" height="14" rx="3" class="c-mask"/>
+          <text x="550" y="375.5" class="t-edge-dashed" font-size="8" text-anchor="middle">reproduced by tests</text>
         </g>
-        <g data-detail="context" data-edge-from="skcapstone" data-edge-to="evaluator" data-edge-label="implements today" data-edge-key="9" data-edge-id="skcapstone-to-evaluator">
-          <rect x="454.6" y="502" width="86.8" height="14" rx="3" class="c-mask"/>
-          <text x="498" y="512" class="t-edge-dashed" font-size="8" text-anchor="middle">implements today</text>
+        <g data-detail="context" data-edge-from="evaluate" data-edge-to="gh" data-edge-label="evaluation v4 record and comment" data-edge-key="9" data-edge-id="evaluate-gh">
+          <rect x="290.4" y="85.5" width="163.6" height="14" rx="3" class="c-mask"/>
+          <text x="372.2" y="95.5" class="t-edge-emphasis" font-size="8" text-anchor="middle">evaluation v4 record and comment</text>
         </g>
-        <g data-detail="context" data-edge-from="evaluator" data-edge-to="skdashboard" data-edge-label="bounded aggregate visibility" data-edge-key="10" data-edge-id="evaluator-to-skdashboard">
-          <rect x="566" y="437" width="144.4" height="14" rx="3" class="c-mask"/>
-          <text x="638.2" y="447" class="t-edge-dashed" font-size="8" text-anchor="middle">bounded aggregate visibility</text>
+        <g data-detail="context" data-edge-from="gh" data-edge-to="review" data-edge-label="read as evidence" data-edge-key="10" data-edge-id="gh-review">
+          <rect x="1007.1999999999999" y="295" width="86.8" height="14" rx="3" class="c-mask"/>
+          <text x="1050.6" y="305" class="t-edge-default" font-size="8" text-anchor="middle">read as evidence</text>
+        </g>
+        <g data-detail="context" data-edge-from="review" data-edge-to="authority" data-edge-label="proposal or lesson" data-edge-key="11" data-edge-id="review-authority">
+          <rect x="997.5999999999999" y="455" width="96.39999999999999" height="14" rx="3" class="c-mask"/>
+          <text x="1045.8" y="465" class="t-edge-security" font-size="8" text-anchor="middle">proposal or lesson</text>
+        </g>
+        <g data-detail="context" data-edge-from="evaluate" data-edge-to="actuation" data-edge-label="never" data-edge-key="12" data-edge-id="evaluate-actuation">
+          <rect x="718" y="32" width="34" height="14" rx="3" class="c-mask"/>
+          <text x="735" y="42" class="t-edge-dashed" font-size="8" text-anchor="middle">never</text>
         </g>
 
         <!-- Boundary labels (foreground masks keep routes out of titles) -->
-        <g data-graph-role="structural-frame-label" data-composition-frame-id="0" data-composition-frame-kind="region" data-composition-frame-label="SKRSI contracts: documentation-first, no network surface">
-          <rect data-graph-role="structural-frame-label-mask" x="14" y="140" width="312.4" height="16" rx="3" class="c-mask"/>
-          <text data-boundary-label="" x="18" y="153" class="t-cloud" font-size="9" font-weight="600">SKRSI contracts: documentation-first, no network surface</text>
-        </g>
-
-        <g data-graph-role="structural-frame-label" data-composition-frame-id="1" data-composition-frame-kind="security-group" data-composition-frame-label="Producer and reviewer identities must differ">
-          <rect data-graph-role="structural-frame-label-mask" x="659.1806319612904" y="280" width="241.6387360774193" height="16" rx="3" class="c-mask"/>
-          <text data-boundary-label="" x="663.1806319612904" y="292.7741945483871" class="t-security" font-size="8.774194548387095" font-weight="600">Producer and reviewer identities must differ</text>
+        <g data-graph-role="structural-frame-label" data-composition-frame-id="0" data-composition-frame-kind="region" data-composition-frame-label="SKRSI">
+          <rect data-graph-role="structural-frame-label-mask" x="174" y="90" width="37" height="16" rx="3" class="c-mask"/>
+          <text data-boundary-label="" x="178" y="103" class="t-cloud" font-size="9" font-weight="600">SKRSI</text>
         </g>
 
         <!-- Legend -->
-        <g data-legend="" data-legend-bridge="">
-          <text x="40" y="596" class="t-primary" font-size="12" font-weight="650">Legend</text>
-          <g data-legend-semantic-kind="backend" data-legend-kind="backend" data-legend-label="Backend" data-legend-x="40" data-legend-baseline="616" data-legend-width="87">
-            <rect x="40" y="607" width="16" height="10" rx="2.5" class="c-backend" stroke-width="1"/>
-            <text x="62" y="616" class="t-muted" font-size="10" font-weight="500">Backend</text>
-          </g>
-          <g data-legend-semantic-kind="database" data-legend-kind="database" data-legend-label="Database" data-legend-x="149" data-legend-baseline="616" data-legend-width="93">
-            <rect x="149" y="607" width="16" height="10" rx="2.5" class="c-database" stroke-width="1"/>
-            <text x="171" y="616" class="t-muted" font-size="10" font-weight="500">Database</text>
-          </g>
-          <g data-legend-semantic-kind="security" data-legend-kind="security" data-legend-label="Security" data-legend-x="264" data-legend-baseline="616" data-legend-width="93">
-            <rect x="264" y="607" width="16" height="10" rx="2.5" class="c-security" stroke-width="1"/>
-            <text x="286" y="616" class="t-muted" font-size="10" font-weight="500">Security</text>
-          </g>
-          <g data-legend-semantic-kind="external" data-legend-kind="external" data-legend-label="External" data-legend-x="379" data-legend-baseline="616" data-legend-width="93">
-            <rect x="379" y="607" width="16" height="10" rx="2.5" class="c-external" stroke-width="1"/>
-            <text x="401" y="616" class="t-muted" font-size="10" font-weight="500">External</text>
-          </g>
-        </g>
+
       </svg>
       <p class="intent-trace-status no-print" id="intent-trace-status" role="status" aria-live="polite" aria-atomic="true"></p>
       <div class="diagram-guide no-print" id="diagram-guide" hidden role="dialog" aria-modal="false" aria-labelledby="diagram-guide-title">
@@ -5665,31 +5752,30 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
           <h3>Proposes, never authorizes</h3>
         </div>
         <ul>
-          <li>A valid record confers no merge, deployment, credential, or actuation power</li>
-          <li>Feedback is proposal-only, routed through the adopter&#39;s own existing lifecycle gates</li>
+          <li>The workflow is advisory: it never fails a PR and is never a required check</li>
+          <li>An evaluation record or comment grants no merge, deployment, or actuation power</li>
         </ul>
       </div>
 
       <div class="card">
         <div class="card-header">
           <div class="card-dot cyan"></div>
-          <h3>Independent review is enforced</h3>
+          <h3>Owns no runtime data</h3>
         </div>
         <ul>
-          <li>Producer and reviewer identities must differ, an ordered unique participant tuple</li>
-          <li>FAIL or INCONCLUSIVE stays recorded as a lesson, and no model, agent, or operator can relabel it as success</li>
+          <li>The repo holds schemas, synthetic examples and its own targets</li>
+          <li>Evaluation records live with each adopter: PR comments, artifacts, committed records</li>
         </ul>
       </div>
 
       <div class="card">
         <div class="card-header">
           <div class="card-dot emerald"></div>
-          <h3>Documentation-first today</h3>
+          <h3>Two ways in</h3>
         </div>
         <ul>
-          <li>This repository publishes contracts and examples only, with no service and no network surface</li>
-          <li>Runtime modules (skrsi_registry, skrsi_collector, skrsi_evaluator, skrsi_experiment_controller) live in SKCapstone until a governed extraction card moves them</li>
-          <li>SKDashboard consumes SKRSI records for bounded aggregate visibility, not for source content or authorization</li>
+          <li>CI: an adopter PR calls evaluate.yml, which benches head and base</li>
+          <li>Live: the adopter benches where its data is and calls build_evaluation.py locally</li>
         </ul>
       </div>
     </div>
