@@ -54,17 +54,17 @@
       <span class="brand"><a href="https://skworld.io/">&#128039; SKWORLD</a> <span class="sub-brand">/ rsi</span></span>
       <nav class="topnav" aria-label="Main navigation">
         <a href="#loop">The loop</a>
-        <a href="#flow">Flow</a>
         <a href="#contracts">Contracts</a>
         <a href="#conformance">Conformance</a>
-        <a href="#in-practice">In practice</a>
-        <a href="diagrams/skrsi.architecture.html" target="_blank" rel="noopener">Architecture diagram &#8599;</a>
+        <a href="diagrams/skrsi.architecture.html" target="_blank" rel="noopener">Architecture &#8599;</a>
+        <a href="diagrams/skrsi.dataflow.html" target="_blank" rel="noopener">Data flow &#8599;</a>
+        <a href="diagrams/skrsi.sequence.html" target="_blank" rel="noopener">PR sequence &#8599;</a>
         <a href="docs.html">Docs</a>
         <a href="https://github.com/smilinTux/skrsi">GitHub &#8599;</a>
         <button type="button" class="theme-btn" id="theme-btn" aria-label="Switch between light and dark theme">theme</button>
       </nav>
     </div>
-    <span class="eyebrow">SKWorld &middot; Agents and the OS &middot; Incubating &middot; Apache-2.0</span>
+    <span class="eyebrow">SKWorld &middot; Agents and the OS &middot; Incubating v4 &middot; Apache-2.0</span>
     <h1>The improvement loop that cannot promote itself.</h1>
     <p class="sub"><strong>SKRSI</strong> is the evidence-first improvement control plane for SK software lifecycle orchestration. It measures delivery, evaluates bounded experiments, records lessons, and proposes safer changes. Then it stops and hands the decision to somebody else.</p>
     <div class="cta">
@@ -158,13 +158,13 @@
       <p class="loopback">Both branches return to the target. That return path is the only recursion in the system.</p>
     </div>
 
-    <h3 class="sub3" id="architecture">Architecture, interactive</h3>
-    <figure class="figure">
-      <figcaption style="margin-top:0">The same loop as an explorable component map, with the SKCapstone runtime and the SKDashboard consumer drawn in: pan, zoom, and follow each edge, with a dark/light toggle. It is generated with <a href="https://github.com/tt-a1i/archify">Archify</a> from <a href="diagrams/skrsi.architecture.json">a committed JSON source</a> that follows the flow in the SKRSI <a href="https://github.com/smilinTux/skrsi/blob/main/SOP.md#2-architecture">SOP</a> and the responsibility table in <a href="https://github.com/smilinTux/skrsi/blob/main/docs/ARCHITECTURE.md">docs/ARCHITECTURE.md</a>.</figcaption>
-      <div class="cta" style="margin-top:1rem">
-        <a class="btn primary" href="diagrams/skrsi.architecture.html" target="_blank" rel="noopener">Open the interactive diagram &#8599;</a>
-      </div>
-    </figure>
+    <h3 class="sub3" id="architecture">Interactive diagrams</h3>
+    <p class="lede">Three explorable views, each derived from the matching mermaid view in <a href="https://github.com/smilinTux/skrsi/blob/main/docs/ARCHITECTURE.md">docs/ARCHITECTURE.md</a> (system context and components, data flow, and the PR evaluation sequence) and generated with <a href="https://github.com/tt-a1i/archify">Archify</a> from the JSON committed beside each page (<a href="diagrams/skrsi.architecture.json">architecture</a>, <a href="diagrams/skrsi.dataflow.json">data flow</a>, <a href="diagrams/skrsi.sequence.json">sequence</a>). Pan, zoom, follow each edge, and switch light or dark. They open in a new tab.</p>
+    <div class="pgrid">
+      <a class="pcard" href="diagrams/skrsi.architecture.html" target="_blank" rel="noopener"><span class="pname">Architecture &#8599;</span><span class="pblurb">System context and components.</span><span class="phost">diagrams/skrsi.architecture.html</span></a>
+      <a class="pcard" href="diagrams/skrsi.dataflow.html" target="_blank" rel="noopener"><span class="pname">Data flow &#8599;</span><span class="pblurb">Every hop, with its data class.</span><span class="phost">diagrams/skrsi.dataflow.html</span></a>
+      <a class="pcard" href="diagrams/skrsi.sequence.html" target="_blank" rel="noopener"><span class="pname">PR sequence &#8599;</span><span class="pblurb">One advisory PR evaluation.</span><span class="phost">diagrams/skrsi.sequence.html</span></a>
+    </div>
   </section>
 
   <section class="sec" id="contracts">
@@ -270,7 +270,9 @@
       <a class="pcard" href="https://github.com/smilinTux/skrsi/blob/main/docs/CONFORMANCE.md"><span class="pname">Conformance</span><span class="pblurb">Levels, and the checks CI actually runs.</span><span class="phost">docs/CONFORMANCE.md</span></a>
       <a class="pcard" href="https://github.com/smilinTux/skrsi/blob/main/docs/CASE-STUDY-SKMEMORY-RETRIEVAL.md"><span class="pname">Case study: skmemory retrieval</span><span class="pblurb">The first code adopter, what it got right and what it missed.</span><span class="phost">docs/CASE-STUDY-SKMEMORY-RETRIEVAL.md</span></a>
       <a class="pcard" href="https://github.com/smilinTux/skrsi/blob/main/docs/PLAYBOOK-LANES.md"><span class="pname">Lane playbook</span><span class="pblurb">Lane briefs, the landing script, and the lessons behind them.</span><span class="phost">docs/PLAYBOOK-LANES.md</span></a>
-      <a class="pcard" href="diagrams/skrsi.architecture.html" target="_blank" rel="noopener"><span class="pname">Architecture diagram</span><span class="pblurb">Interactive Archify component map.</span><span class="phost">diagrams/skrsi.architecture.html</span></a>
+      <a class="pcard" href="diagrams/skrsi.architecture.html" target="_blank" rel="noopener"><span class="pname">Diagram: architecture</span><span class="pblurb">System context and components, interactive.</span><span class="phost">diagrams/skrsi.architecture.html</span></a>
+      <a class="pcard" href="diagrams/skrsi.dataflow.html" target="_blank" rel="noopener"><span class="pname">Diagram: data flow</span><span class="pblurb">Every hop, with its data class, interactive.</span><span class="phost">diagrams/skrsi.dataflow.html</span></a>
+      <a class="pcard" href="diagrams/skrsi.sequence.html" target="_blank" rel="noopener"><span class="pname">Diagram: pr sequence</span><span class="pblurb">One advisory PR evaluation, interactive.</span><span class="phost">diagrams/skrsi.sequence.html</span></a>
     </div>
     <h3 class="sub3">Validate a checkout</h3>
     <pre><code>git clone https://github.com/smilinTux/skrsi
@@ -288,7 +290,7 @@ python3 scripts/validate_public.py .</code></pre>
       <a class="pcard" href="https://skpatch.skworld.io/"><span class="pname">SKPatch</span><span class="pblurb">Patch at AI speed. Every image pinned, every CVE tracked.</span><span class="phost">skpatch.skworld.io</span></a>
       <a class="pcard" href="https://sksec.skworld.io/"><span class="pname">SKSec</span><span class="pblurb">CrowdSec at the edge, fail-closed.</span><span class="phost">sksec.skworld.io</span></a>
       <a class="pcard" href="https://skmemory.skworld.io/"><span class="pname">SKMemory</span><span class="pblurb">Per-agent memory, and the first code adopter of the evaluate workflow.</span><span class="phost">skmemory.skworld.io</span></a>
-      <a class="pcard" href="https://skstacks.skworld.io/"><span class="pname">SKStacks</span><span class="pblurb">AI-first sovereign infrastructure framework.</span><span class="phost">skstacks.skworld.io</span></a>
+      <a class="pcard" href="https://skstacks.skworld.io/"><span class="pname">SKStacks</span><span class="pblurb">AI-first sovereign infrastructure framework. A planned SKRSI adopter.</span><span class="phost">skstacks.skworld.io</span></a>
       <a class="pcard" href="https://skcapstone.skworld.io/"><span class="pname">SKCapstone</span><span class="pblurb">Holds the current registry, collector, evaluator, experiment controller, and runtime handoff implementation.</span><span class="phost">skcapstone.skworld.io</span></a>
       <a class="pcard" href="https://github.com/smilinTux/skdashboard"><span class="pname">SKDashboard</span><span class="pblurb">Consumes SKRSI records for bounded aggregate visibility.</span><span class="phost">github.com/smilinTux/skdashboard</span></a>
       <a class="pcard" href="https://github.com/smilinTux/sk-standards"><span class="pname">sk-standards</span><span class="pblurb">Governs this repository.</span><span class="phost">github.com/smilinTux/sk-standards</span></a>
