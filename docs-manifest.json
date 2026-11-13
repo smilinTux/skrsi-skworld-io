@@ -2,7 +2,7 @@
   "repo": "smilinTux/skrsi",
   "branch": "main",
   "path": "docs",
-  "generated": "2026-11-12",
+  "generated": "2026-11-13",
   "note": "Committed fallback for the /docs viewer when the GitHub Contents API is unavailable or rate-limited. Regenerate from: python docs-manifest-gen.py smilinTux/skrsi --out docs-manifest.json",
   "docs": [
     {
@@ -24,6 +24,10 @@
     {
       "name": "CONTRACTS.md",
       "title": "Public contract catalog"
+    },
+    {
+      "name": "INSTANCE-MODEL.md",
+      "title": "SKRSI: the framework and instance model"
     },
     {
       "name": "MIGRATION-V2-V3.md",
